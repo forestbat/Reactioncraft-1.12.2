@@ -7,8 +7,4 @@ import net.minecraft.item.ItemStack;
  */
 public class Tools {
 
-    public static void decreaseStackSize(ItemStack itemStack)
-    {
-        itemStack.setCount(itemStack.getCount()-1);
-    }
 }
