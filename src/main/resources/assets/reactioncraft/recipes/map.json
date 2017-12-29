@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "reactioncraft:Mapinabottle",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "minecraft:map"
+    }
+}

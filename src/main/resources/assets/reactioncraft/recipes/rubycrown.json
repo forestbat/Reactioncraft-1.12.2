@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TYT",
+        "TTT"
+    ],
+    "key": {
+        "T": {
+            "type": "forge:ore_dict",
+            "ore": "ingotGold"
+        },
+        "Y": {
+            "type": "forge:ore_dict",
+            "ore": "gemRuby"
+        }
+    },
+    "result": {
+        "item": "reactioncraft:rubycrown"
+    }
+}

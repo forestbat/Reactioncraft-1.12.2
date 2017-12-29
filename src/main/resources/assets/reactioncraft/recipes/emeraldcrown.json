@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TET",
+        "TTT"
+    ],
+    "key": {
+        "T": {
+            "item": "minecraft:gold_ingot",
+            "data": 0
+        },
+        "E": {
+            "item": "minecraft:emerald",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:emeraldcrown",
+        "data": 0
+    }
+}

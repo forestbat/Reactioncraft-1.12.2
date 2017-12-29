@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "I",
+        "X",
+        "X"
+    ],
+    "result": {
+        "item": "reactioncraft:BloodstoneShovel"
+    },
+    "key": {
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "ingotBloodstone"
+        },
+        "X": {
+            "type": "forge:ore_dict",
+            "ore": "goldRod"
+        }
+    }
+}

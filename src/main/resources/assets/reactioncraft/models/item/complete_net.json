@@ -1,0 +1,18 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "reactioncraft:items/tools/complete_net"
+    },
+    "display": {
+        "thirdperson": {
+            "rotation": [ 0, -180, -70 ],
+            "translation": [ 0, 1.25, 3.5 ],
+            "scale": [ 0.85, 0.85, 0.85 ]
+        },
+        "firstperson": {
+            "rotation": [ 0, -270, -50 ],
+            "translation": [ 0, -4, -2 ],
+            "scale": [ 1.7, 1.7, 1.7 ]
+        }
+    }
+}

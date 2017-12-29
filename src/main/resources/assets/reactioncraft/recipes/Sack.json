@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TTT",
+        "TTT"
+    ],
+    "key": {
+        "T": {
+            "item": "reactioncraft:Straw",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:Sack",
+        "data": 0
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent":"reactioncraft:block/column",
+  "textures":{
+    "all": "reactioncraft:blocks/sandbrick"
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TTT",
+        "T T",
+        "T T"
+    ],
+    "key": {
+        "T": {
+            "item": "minecraft:wool",
+            "data": 32767
+        }
+    },
+    "result": {
+        "item": "reactioncraft:KinglyLegs",
+        "data": 0
+    }
+}

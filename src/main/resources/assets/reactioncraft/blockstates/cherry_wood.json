@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=none": {
+            "model": "reactioncraft:cherry_wood"
+        },
+        "axis=y" : {
+            "model" : "reactioncraft:cherry_wood"
+        },
+        "axis=z" : {
+            "model" : "reactioncraft:cherry_wood", "x" : 90
+        },
+        "axis=x" : {
+            "model": "reactioncraft:cherry_wood", "x" : 90, "y" : 90
+        }
+    }
+}

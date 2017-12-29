@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GG",
+        "GG"
+    ],
+    "result": {
+        "item": "reactioncraft:desertblocks",
+        "count": 4,
+        "data": 6
+    },
+    "key": {
+        "G": {
+            "item": "reactioncraft:desertblocks",
+            "data": 7
+        }
+    }
+}

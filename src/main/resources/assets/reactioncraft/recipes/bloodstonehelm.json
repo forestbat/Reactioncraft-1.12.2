@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TTT",
+        "T T"
+    ],
+    "result": {
+        "item": "reactioncraft:bloodstonehelm"
+    },
+    "key": {
+        "T": {
+            "item": "reactioncraft:ingotbloodstone",
+            "data": 0
+        }
+    }
+}

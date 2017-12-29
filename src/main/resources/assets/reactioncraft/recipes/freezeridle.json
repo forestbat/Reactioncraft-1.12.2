@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RSR",
+        "LOW",
+        "RSR"
+    ],
+    "result": {
+        "item": "reactioncraft:freezeridle",
+        "count": 1,
+        "data": 0
+    },
+    "key": {
+        "R": {
+            "item": "minecraft:redstone",
+            "data": 0
+        },
+        "S": {
+            "item": "minecraft:iron_block",
+            "data": 0
+        },
+        "L": {
+            "item": "minecraft:lever",
+            "data": 0
+        },
+        "O": {
+            "item": "minecraft:furnace",
+            "data": 0
+        },
+        "W": {
+            "item": "minecraft:water_bucket",
+            "data": 0
+        }
+    }
+}

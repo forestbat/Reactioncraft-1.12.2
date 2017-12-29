@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "XXX",
+        "XIX"
+    ],
+    "result": {
+        "item": "reactioncraft:bloodstoneHammer"
+    },
+    "key": {
+        "X": {
+            "type": "forge:ore_dict",
+            "ore": "ingotBloodstone"
+        },
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "goldRod"
+        }
+    }
+}

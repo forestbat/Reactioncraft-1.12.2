@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " I ",
+        "XIX",
+        " X "
+    ],
+    "result": {
+        "item": "reactioncraft:GoldenSwordFragment"
+    },
+    "key": {
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "gemDragonstone"
+        },
+        "X": {
+            "type": "forge:ore_dict",
+            "ore": "goldRod"
+        }
+    }
+}

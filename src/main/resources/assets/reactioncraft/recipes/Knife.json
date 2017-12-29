@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "A",
+        "B"
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:stick",
+            "data": 0
+        },
+        "B": {
+            "item": "minecraft:iron_ingot",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:Knife",
+        "data": 0
+    }
+}

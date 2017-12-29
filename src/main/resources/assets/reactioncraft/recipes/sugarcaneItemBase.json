@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:reeds",
+            "data": 0
+        },
+        {
+            "item": "reactioncraft:AncientFlower",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:sugarcaneItemBase"
+    }
+}

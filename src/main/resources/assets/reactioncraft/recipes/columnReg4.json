@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "X ",
+        "XY",
+        "X "
+    ],
+    "result": {
+        "item": "reactioncraft:columnReg",
+        "count": 1,
+        "data": 4
+    },
+    "key": {
+        "X": {
+            "item": "minecraft:cobblestone",
+            "data": 0
+        },
+        "Y": {
+            "type": "forge:ore_dict",
+            "ore": "chisel"
+        }
+    }
+}

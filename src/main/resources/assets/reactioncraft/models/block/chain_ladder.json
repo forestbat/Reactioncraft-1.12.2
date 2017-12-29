@@ -1,0 +1,7 @@
+{
+    "parent": "block/ladder",
+    "textures": {
+        "texture": "reactioncraft:blocks/chains",
+        "particle" : "reactioncraft:blocks/chains"
+    }
+}

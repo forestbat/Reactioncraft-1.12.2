@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "A",
+        "B"
+    ],
+    "key": {
+        "A": {
+            "item": "reactioncraft:buns",
+            "data": 0
+        },
+        "B": {
+            "item": "minecraft:beef",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:Hamburger",
+        "data": 0
+    }
+}

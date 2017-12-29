@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "A ",
+        "BC",
+        "A "
+    ],
+    "result": {
+        "item": "reactioncraft:Cheeseburger"
+    },
+    "key": {
+        "A": {
+            "item": "reactioncraft:buns",
+            "data": 0
+        },
+        "B": {
+            "item": "minecraft:cooked_beef",
+            "data": 0
+        },
+        "C": {
+            "type": "forge:ore_dict",
+            "ore": "cheese"
+        }
+    }
+}

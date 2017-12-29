@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+        "bottom": "reactioncraft:blocks/woodenbookcasedoor_lower",
+        "top": "reactioncraft:blocks/woodenbookcasedoor_lower"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:porkchop",
+            "data": 0
+        },
+        {
+            "item": "reactioncraft:Knife",
+            "data": 32767
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:Bacon",
+        "count": 4
+    }
+}

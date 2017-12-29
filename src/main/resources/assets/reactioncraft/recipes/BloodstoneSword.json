@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "B",
+        "F"
+    ],
+    "key": {
+        "B": {
+            "item": "reactioncraft:BloodstoneBlade",
+            "data": 0
+        },
+        "F": {
+            "item": "reactioncraft:GoldenSwordFragment",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:BloodstoneSword",
+        "data": 0
+    }
+}

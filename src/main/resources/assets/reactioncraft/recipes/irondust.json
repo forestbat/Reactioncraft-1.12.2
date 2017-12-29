@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "reactioncraft:iron_shavings",
+            "data": 0
+        },
+        {
+            "item": "reactioncraft:iron_shavings",
+            "data": 0
+        },
+        {
+            "item": "reactioncraft:iron_shavings",
+            "data": 0
+        },
+        {
+            "item": "reactioncraft:iron_shavings",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:irondust",
+        "data": 0
+    }
+}

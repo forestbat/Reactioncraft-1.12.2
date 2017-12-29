@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "dyeRed"
+        },
+        {
+            "item": "reactioncraft:moltenglass",
+            "data": 0
+        },
+        {
+            "item": "minecraft:glowstone_dust",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:glowingglass",
+        "count": 1,
+        "data": 14
+    }
+}

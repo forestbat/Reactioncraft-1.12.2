@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:rotten_flesh",
+            "data": 0
+        },
+        {
+            "item": "reactioncraft:Knife",
+            "data": 32767
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:EdibleFlesh"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "YYY",
+        " X ",
+        " @ "
+    ],
+    "result": {
+        "item": "reactioncraft:hieroglyph",
+        "count": 1,
+        "data": 9
+    },
+    "key": {
+        "Y": {
+            "type": "forge:ore_dict",
+            "ore": "chisel"
+        },
+        "X": {
+            "item": "reactioncraft:desertblocks",
+            "data": 2
+        },
+        "@": {
+            "item": "minecraft:gold_ingot",
+            "data": 0
+        }
+    }
+}

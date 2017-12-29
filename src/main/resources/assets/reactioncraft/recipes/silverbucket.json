@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "Y",
+        "X"
+    ],
+    "result": {
+        "item": "reactioncraft:silver_bucket"
+    },
+    "key": {
+        "Y": {
+            "type": "forge:ore_dict",
+            "ore": "ingotSilver"
+        },
+        "X": {
+            "item": "minecraft:bucket",
+            "data": 0
+        }
+    }
+}

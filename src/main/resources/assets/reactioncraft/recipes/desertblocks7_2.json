@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GG",
+        "GG"
+    ],
+    "result": {
+        "item": "reactioncraft:desertblocks",
+        "count": 1,
+        "data": 7
+    },
+    "key": {
+        "G": {
+            "item": "reactioncraft:SandStonePaste",
+            "data": 0
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "reactioncraft:piece_hilt",
+            "data": 0
+        },
+        {
+            "item": "reactioncraft:piece_net",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:complete_net"
+    }
+}

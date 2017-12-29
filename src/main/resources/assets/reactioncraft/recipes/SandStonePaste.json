@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:water_bucket",
+            "data": 0
+        },
+        {
+            "item": "reactioncraft:sands",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:SandStonePaste",
+        "count": 2
+    }
+}

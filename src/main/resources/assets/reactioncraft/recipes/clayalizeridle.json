@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "XXX",
+        "XGX",
+        "XXX"
+    ],
+    "result": {
+        "item": "reactioncraft:clayalizeridle",
+        "count": 1,
+        "data": 0
+    },
+    "key": {
+        "X": {
+            "item": "reactioncraft:desertblocks",
+            "data": 3
+        },
+        "G": {
+            "item": "minecraft:glass",
+            "data": 0
+        }
+    }
+}

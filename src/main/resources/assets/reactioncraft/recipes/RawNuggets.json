@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:chicken",
+            "data": 0
+        },
+        {
+            "item": "reactioncraft:Knife",
+            "data": 32767
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:RawNuggets"
+    }
+}

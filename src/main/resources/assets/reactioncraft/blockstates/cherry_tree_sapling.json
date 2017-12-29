@@ -1,0 +1,15 @@
+{
+    "variants": {
+        "normal": {
+            "model": "reactioncraft:cherry_tree_sapling"
+        },
+
+        "stage=0":{
+            "model": "reactioncraft:cherry_tree_sapling"
+        },
+
+        "stage=1":{
+            "model": "reactioncraft:cherry_tree_sapling"
+        }
+    }
+}

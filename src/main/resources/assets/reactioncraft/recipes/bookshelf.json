@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BBB",
+        " # "
+    ],
+    "result": {
+        "item": "minecraft:bookshelf",
+        "data" : 0
+    },
+    "key": {
+        "B": {
+            "item": "minecraft:book",
+            "data": 0
+        },
+        "#": {
+            "item": "reactioncraft:bookcases",
+            "data": 1
+        }
+    }
+}

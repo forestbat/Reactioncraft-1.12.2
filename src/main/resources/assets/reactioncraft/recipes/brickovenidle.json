@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "XXX",
+        "X X",
+        "XXX"
+    ],
+    "result": {
+        "item": "reactioncraft:brickovenidle",
+        "data" : 0
+    },
+    "key": {
+        "X": {
+            "item": "reactioncraft:desertblocks",
+            "data": 3
+        }
+    }
+}

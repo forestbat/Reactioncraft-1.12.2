@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "darkclay"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "darkclay"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "darkclay"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "darkclay"
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:desertblocks",
+        "count": 1,
+        "data": 7
+    }
+}

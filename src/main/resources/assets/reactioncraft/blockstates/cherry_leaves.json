@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "normal": {
+            "model": "reactioncraft:cherry_leaves"
+        },
+        "check_decay=true,decayable=true" : {
+            "model" : "reactioncraft:cherry_leaves"
+        },
+        "check_decay=true,decayable=false" : {
+            "model" : "reactioncraft:cherry_leaves"
+        },
+        "check_decay=false,decayable=true" : {
+            "model" : "reactioncraft:cherry_leaves"
+        },
+        "check_decay=false,decayable=false" : {
+            "model" : "reactioncraft:cherry_leaves"
+        }
+    }
+}

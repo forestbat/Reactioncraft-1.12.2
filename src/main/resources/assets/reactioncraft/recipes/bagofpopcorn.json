@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "BBB",
+        "AAA"
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:paper",
+            "data": 0
+        },
+        "B": {
+            "item": "reactioncraft:popcornseeds",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:bagofpopcorn",
+        "data": 0
+    }
+}

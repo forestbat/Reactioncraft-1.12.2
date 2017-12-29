@@ -1,0 +1,55 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cube_all"
+    },
+    "variants": {
+        "type": {
+            "one1": {
+                "textures": {
+                    "all": "reactioncraft:blocks/MutiBrick"
+                }
+            },
+            "one2": {
+                "textures": {
+                    "all": "reactioncraft:blocks/Chiseled1"
+                }
+            },
+             "one3": {
+                "textures": {
+                    "all": "reactioncraft:blocks/css"
+                }
+            },
+             "two1": {
+                "textures": {
+                    "all": "reactioncraft:blocks/limestone"
+                }
+            },
+             "two2": {
+                "textures": {
+                    "all": "reactioncraft:blocks/MudBrick"
+                }
+            },
+             "two3": {
+                "textures": {
+                    "all": "reactioncraft:blocks/mossydsbrick"
+                }
+            },
+             "three1": {
+                "textures": {
+                    "all": "reactioncraft:blocks/SandBrick"
+                }
+            },
+             "three2": {
+                "textures": {
+                    "all": "reactioncraft:blocks/SandStone"
+                }
+            },
+             "three3": {
+                "textures": {
+                    "all": "reactioncraft:blocks/Quartz"
+                }
+            }
+        }
+    }
+}

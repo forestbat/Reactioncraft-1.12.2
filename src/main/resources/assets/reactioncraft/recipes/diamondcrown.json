@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TDT",
+        "TTT"
+    ],
+    "key": {
+        "T": {
+            "item": "minecraft:gold_ingot",
+            "data": 0
+        },
+        "D": {
+            "item": "minecraft:diamond",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:diamondcrown",
+        "data": 0
+    }
+}

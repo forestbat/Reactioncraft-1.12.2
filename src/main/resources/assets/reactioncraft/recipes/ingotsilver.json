@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "reactioncraft:silver_bucket",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:ingotsilver"
+    }
+}

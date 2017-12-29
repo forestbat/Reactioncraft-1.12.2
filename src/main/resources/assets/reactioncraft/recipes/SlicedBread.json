@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "reactioncraft:Knife",
+            "data": 32767
+        },
+        {
+            "item": "minecraft:bread",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:SlicedBread",
+        "count": 6
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "III",
+        " X ",
+        " X "
+    ],
+    "result": {
+        "item": "reactioncraft:ObbyPick"
+    },
+    "key": {
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "ingotObsidian"
+        },
+        "X": {
+            "type": "forge:ore_dict",
+            "ore": "goldRod"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "reactioncraft:churn",
+            "data": 32767
+        },
+        {
+            "item": "minecraft:milk_bucket",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "reactioncraft:cheese"
+    }
+}

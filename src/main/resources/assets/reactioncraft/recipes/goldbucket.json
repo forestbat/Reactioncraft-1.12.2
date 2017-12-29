@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "Y",
+        "X"
+    ],
+    "result": {
+        "item": "reactioncraft:goldbucket"
+    },
+    "key": {
+        "X": {
+            "item": "minecraft:bucket",
+            "data": 0
+        },
+        "Y": {
+            "type": "forge:ore_dict",
+            "ore": "ingotGold"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "Y",
+        "Y",
+        "Y"
+    ],
+    "result": {
+        "item": "reactioncraft:chain_ladder",
+        "count": 2,
+        "data": 0
+    },
+    "key": {
+        "Y": {
+            "item": "reactioncraft:chainloop",
+            "data": 0
+        }
+    }
+}

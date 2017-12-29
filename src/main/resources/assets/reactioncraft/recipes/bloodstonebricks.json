@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TT",
+        "TT"
+    ],
+    "result": {
+        "item": "reactioncraft:bloodstonebricks",
+        "count": 4
+    },
+    "key": {
+        "T": {
+            "item": "reactioncraft:ingotbloodstone",
+            "data": 0
+        }
+    }
+}

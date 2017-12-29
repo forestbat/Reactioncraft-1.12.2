@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BB",
+        "BB",
+        "A "
+    ],
+    "key": {
+        "B": {
+            "item": "minecraft:iron_ingot",
+            "data": 0
+        },
+        "A": {
+            "item": "minecraft:stick",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:meat_cleaver",
+        "data": 0
+    }
+}

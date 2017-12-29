@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "YYY",
+        "YX ",
+        "Y@ "
+    ],
+    "result": {
+        "item": "reactioncraft:hieroglyph",
+        "count": 1,
+        "data": 4
+    },
+    "key": {
+        "Y": {
+            "type": "forge:ore_dict",
+            "ore": "chisel"
+        },
+        "X": {
+            "item": "reactioncraft:desertblocks",
+            "data": 2
+        },
+        "@": {
+            "item": "reactioncraft:CutDBGem",
+            "data": 0
+        }
+    }
+}

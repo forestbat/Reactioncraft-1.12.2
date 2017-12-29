@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "T T",
+        "T T"
+    ],
+    "result": {
+        "item": "reactioncraft:bloodstoneboots"
+    },
+    "key": {
+        "T": {
+            "item": "reactioncraft:ingotbloodstone",
+            "data": 0
+        }
+    }
+}

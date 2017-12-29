@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "reactioncraft:blocks/cherry_tree_sapling"
+    }
+}

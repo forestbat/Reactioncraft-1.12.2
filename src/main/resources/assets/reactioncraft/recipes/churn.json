@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "A",
+        "B"
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:stick",
+            "data": 0
+        },
+        "B": {
+            "item": "minecraft:bowl",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:churn",
+        "data": 0
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "reactioncraft:blocks/cherry_wood",
+        "end": "reactioncraft:blocks/cherry_wood_end"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "IBI",
+        " X ",
+        " X "
+    ],
+    "result": {
+        "item": "reactioncraft:BloodstoneDiamondPick"
+    },
+    "key": {
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "ingotBloodstone"
+        },
+        "B": {
+            "type": "forge:ore_dict",
+            "ore": "diamondBlack"
+        },
+        "X": {
+            "type": "forge:ore_dict",
+            "ore": "goldRod"
+        }
+    }
+}
