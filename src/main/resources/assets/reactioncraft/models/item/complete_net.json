@@ -4,15 +4,25 @@
         "layer0": "reactioncraft:items/tools/complete_net"
     },
     "display": {
-        "thirdperson": {
-            "rotation": [ 0, -180, -70 ],
-            "translation": [ 0, 1.25, 3.5 ],
+        "thirdperson_righthand": {
+            "rotation": [ 0, -270, 55 ],
+            "translation": [ 0, 4.0, 0.5 ],
             "scale": [ 0.85, 0.85, 0.85 ]
         },
-        "firstperson": {
-            "rotation": [ 0, -270, -50 ],
-            "translation": [ 0, -4, -2 ],
-            "scale": [ 1.7, 1.7, 1.7 ]
+        "thirdperson_lefthand": {
+            "rotation": [ 0, 270, -55 ],
+            "translation": [ 0, 4.0, 0.5 ],
+            "scale": [ 0.85, 0.85, 0.85 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, -270, 25 ],
+            "translation": [ 1.13, 3.2, 1.13 ],
+            "scale": [ 0.68, 0.68, 0.68 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 45, -90, 0 ],
+            "translation": [ 1.13, 3.2, 1.13 ],
+            "scale": [ 0.68, 0.68, 0.68 ]
         }
     }
 }

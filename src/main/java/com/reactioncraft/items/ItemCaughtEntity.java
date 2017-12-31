@@ -90,7 +90,7 @@ public class ItemCaughtEntity extends ItemBase
     }
 
     @Nullable
-    public Entity spawnCreature(World worldIn, ItemStack stack, double x, double y, double z)
+    private Entity spawnCreature(World worldIn, ItemStack stack, double x, double y, double z)
     {
         if (worldIn.isRemote)
         {

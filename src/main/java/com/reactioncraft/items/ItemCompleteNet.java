@@ -8,6 +8,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
@@ -46,10 +47,8 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
 	{
-		if (entity instanceof EntityLiving && !Reactioncraft.exclusionList.isExcluded(entity))
+		if (!player.world.isRemote && entity instanceof EntityLiving && !Reactioncraft.exclusionList.isExcluded(entity))
 		{
-
-
 				NBTTagCompound entityTag = new NBTTagCompound();
 				entity.writeToNBTOptional(entityTag);
 				entityTag.removeTag("Pos");
@@ -67,7 +66,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 				nbt.setTag("EntityData", entityTag);
 				is.setTagCompound(nbt);
 				 player.dropItem(is, false);
-				stack.damageItem(1, player);
+				if(!this.name.equals("creative_net")) stack.attemptDamageItem(1,itemRand, (EntityPlayerMP) player);
 				entity.setDead();
 
 				if (stack.getItemDamage() >= stack.getMaxDamage() - 1)
