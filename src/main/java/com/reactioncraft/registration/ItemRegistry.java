@@ -9,8 +9,6 @@ import com.reactioncraft.items.chisels.ItemDiamondChisel;
 import com.reactioncraft.items.tools.*;
 import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.registration.instances.ItemIndex;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -157,10 +155,10 @@ public class ItemRegistry
         ItemIndex.ingotCopper       = register(new ItemBase("ingotCopper")     .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.ingotmould        = (ItemBase) register(new ItemBase("ingotmould")  .setMaxDamage(15)    .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.ruby              = register(new ItemBase("ruby")            .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
-        ItemIndex.metadataCoin = (ItemCoin) register(new ItemCoin()    .setCreativeTab(Reactioncraft.ReactioncraftItems).setRegistryName("coin"),forgeRegistry);
+        ItemIndex.coins = (ItemCoin) register(new ItemCoin()    .setCreativeTab(Reactioncraft.ReactioncraftItems).setRegistryName("coin"),forgeRegistry);
 
         for (int i = 0; i < 16; i++) {
-            Reactioncraft.proxy.registerItemRenderer(ItemIndex.metadataCoin,i,"coin"+i);
+            Reactioncraft.proxy.registerItemRenderer(ItemIndex.coins,i,"coin"+i);
         }
 
         

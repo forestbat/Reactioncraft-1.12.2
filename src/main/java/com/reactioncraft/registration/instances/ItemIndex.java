@@ -137,7 +137,7 @@ public class ItemIndex
     public static ItemBase ingotCopper;
     public static ItemBase ingotmould;
     public static ItemBase ruby;
-    public static ItemCoin metadataCoin;
+    public static ItemCoin coins;
     
     //Armor Items
     public static ItemCurrencyArmor crown;

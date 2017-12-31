@@ -14,14 +14,20 @@ import com.reactioncraft.entities.EntityHydrolisc;
 import com.reactioncraft.entities.EntitySkeletonCrawling;
 import com.reactioncraft.entities.EntityZombieCrawling;
 import com.reactioncraft.registration.*;
+import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.world.BiomeHandler;
 import com.reactioncraft.world.Worldgen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
+import net.minecraft.entity.IMerchant;
+import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.village.MerchantRecipe;
+import net.minecraft.village.MerchantRecipeList;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -31,10 +37,14 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.registries.IForgeRegistry;
 
 import java.awt.*;
+import java.util.Random;
 
 //import com.reactioncraft.core.Remapper;
 //Minecraft Imports
@@ -43,29 +53,28 @@ import java.awt.*;
 @SuppressWarnings("unused")
 public class Reactioncraft
 {
-	public static final String NAME = "Reactioncraft 3: Rebirth";
+    public static final String NAME = "Reactioncraft 3: Rebirth";
     public static final String MODID = "reactioncraft";
     public static final String VERSION = "0.2";
 
     //Proxies
     @SidedProxy(serverSide = "com.reactioncraft.core.ServerProxy", clientSide = "com.reactioncraft.core.ClientProxy")
     public static ServerProxy proxy;
-    
+
     //Instance
     @Mod.Instance(MODID)
-	public static com.reactioncraft.Reactioncraft instance;
-    
+    public static com.reactioncraft.Reactioncraft instance;
+
     //Creative Tabs
     public static CreativeTabs Reactioncraft      = new RCBlockTab(MODID);
     public static CreativeTabs ReactioncraftItems = new RCItemTab(MODID+" items");
     public static CreativeTabs Reactioncraftfood  = new RCFoodTab(MODID+" food");
-    
+
     //Exclusion List of Entities
     public static ExclusionList exclusionList=new ExclusionList();
-    
+
     //For Wild_Card Values (Replace as it pops up)
     public static final int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
-
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent evt)
@@ -85,7 +94,6 @@ public class Reactioncraft
 
         TileEntityRegistry.registerTileEntities();
 
-
         int eid=0;
         //NOTICE the colors can be changed as needed. First is shell color, second is spot color
         //FIXME some entities can hang the game
@@ -104,23 +112,60 @@ public class Reactioncraft
         EntitySpawnPlacementRegistry.setPlacementType(EntityZombieCrawling.class, EntityLiving.SpawnPlacementType.ON_GROUND);
         //TODO biomes
     }
-    
+
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
         OreDictionaryRegistry.registerOres();
-    	IntegratedEventRegistry.eventInit();
+        IntegratedEventRegistry.eventInit();
 
-    	//NOTICE
+        //NOTICE
         GameRegistry.registerWorldGenerator(new Worldgen(), 3);
 
-    	RecipesManager.registerRecipes();
+        RecipesManager.registerRecipes();
     }
-    
+
     @Mod.EventHandler
     public void modsLoaded(FMLPostInitializationEvent evt)
     {
-    	Logger.info("Fully Loaded!");
+        Logger.info("Fully Loaded!");
+    }
+
+    @SubscribeEvent
+    public void registerVillagers(RegistryEvent.Register<VillagerRegistry.VillagerProfession> registryEvent)
+    {
+        IForgeRegistry<VillagerRegistry.VillagerProfession> registry=registryEvent.getRegistry();
+
+        VillagerRegistry.VillagerProfession regular=new VillagerRegistry.VillagerProfession(MODID+":regular",MODID+":textures/entity/rc_villager.png",MODID+":textures/entity/zombie_villager/zombie_rc_villager.png");
+        VillagerRegistry.VillagerCareer career=new VillagerRegistry.VillagerCareer(regular,"career1");
+        career.addTrade(1, new EntityVillager.ITradeList() {
+            @Override
+            public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {
+                recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,20+random.nextInt(4)),new ItemStack(ItemIndex.coinMould)));
+            }
+        });
+        registry.register(regular);
+
+        //TODO set trades
+        VillagerRegistry.VillagerProfession banker=new VillagerRegistry.VillagerProfession(MODID+":banker",MODID+":textures/entity/banker.png","");
+        VillagerRegistry.VillagerCareer villagerCareer=new VillagerRegistry.VillagerCareer(banker,"career1");
+        villagerCareer.addTrade(1, new EntityVillager.ITradeList() {
+            @Override
+            public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {
+                recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD),new ItemStack(ItemIndex.coins)));
+                recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,2),new ItemStack(ItemIndex.coins,1,1)));
+                //and so on
+            }
+        });
+        //when villager's level goes up, new trades are unlocked
+        villagerCareer.addTrade(2, new EntityVillager.ITradeList() {
+            @Override
+            public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {
+                recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,3),new ItemStack(ItemIndex.coins,1,2)));
+            }
+        });
+        registry.register(banker);
+
     }
 
     @SubscribeEvent
