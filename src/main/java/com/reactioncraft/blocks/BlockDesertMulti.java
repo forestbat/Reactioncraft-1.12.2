@@ -9,6 +9,7 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 
@@ -58,8 +59,14 @@ public class BlockDesertMulti extends BlockBase implements MetadataArray
         }
     }
 
+//    @Override
+//    public void registerItemModel(ItemBlock itemBlock) {
+//        for(EnumDesertBlocks desertBlocks:EnumDesertBlocks.values())
+//        {
+//            Reactioncraft.proxy.registerItemBlockRenderer(itemBlock,desertBlocks.getMetadata());
+//        }
+//    }
 
-    
     /**
      * Convert the given metadata into a BlockState for this Block
      */
@@ -79,6 +86,6 @@ public class BlockDesertMulti extends BlockBase implements MetadataArray
 
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {TYPE});
+        return new BlockStateContainer(this, TYPE);
     }
 }

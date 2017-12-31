@@ -20,6 +20,11 @@ import javax.annotation.Nullable;
 
 public class ServerProxy implements IGuiHandler
 {
+	public void registerItemBlockRenderer(ItemBlock itemBlock,int meta)
+	{
+
+	}
+
 	public void registerItemRenderer(Item item, int meta, String id) 
 	{
 	}
@@ -34,7 +39,7 @@ public class ServerProxy implements IGuiHandler
 	}
 
 
-	public void registerItemBlockRenderer(Item item){}
+	public void registerItemBlockRenderer(Item item, int range){}
 
     public enum GuiIDs
     {
@@ -47,15 +52,19 @@ public class ServerProxy implements IGuiHandler
 	@Nullable
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z){
     	final TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
-    	
-    	switch(GuiIDs.values()[ID])
-    	{
-			case BRICK_OVEN:
-                return new ContainerBrickOven(player.inventory, (TileEntityBrickOven) tileEntity);
-			case FREEZER:return new ContainerFreezer(player.inventory, (IInventory) tileEntity);
-			case CLAYLISER:return new ContainerClayalizer(player.inventory, (IInventory) tileEntity);
-        }
-        throw new IllegalArgumentException("No gui with id " + ID);
+
+    	if(tileEntity!=null) {
+			switch (GuiIDs.values()[ID]) {
+				case BRICK_OVEN:
+					return new ContainerBrickOven(player.inventory, (TileEntityBrickOven) tileEntity);
+				case FREEZER:
+					return new ContainerFreezer(player.inventory, (IInventory) tileEntity);
+				case CLAYLISER:
+					return new ContainerClayalizer(player.inventory, (IInventory) tileEntity);
+			}
+			throw new IllegalArgumentException("No gui with id " + ID);
+		}
+		return null;
     }
 
 	@Override
