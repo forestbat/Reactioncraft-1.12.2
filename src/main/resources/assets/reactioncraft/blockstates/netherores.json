@@ -1,7 +1,10 @@
 {
     "forge_marker": 1,
     "defaults": {
-        "model": "cube_all"
+        "model": "cube_all",
+      "textures" : {
+        "all" : "reactioncraft:blocks/clear"
+      }
     },
     "variants": {
         "type": {
@@ -72,7 +75,20 @@
                 "textures": {
                     "all": "reactioncraft:blocks/weathered"
                 }
-            }
+            },
+
+          "five1": {
+
+          },
+          "five2" :{
+
+          },
+          "five3" : {
+
+          },
+          "six1" : {
+
+          }
         }
     }
 }

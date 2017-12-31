@@ -1,7 +1,10 @@
 {
     "forge_marker": 1,
     "defaults": {
-        "model": "cube_all"
+        "model": "cube_all",
+      "textures" : {
+        "all" : "reactioncraft:blocks/clear"
+      }
     },
     "variants": {
         "type": {
@@ -49,7 +52,28 @@
                 "textures": {
                     "all": "reactioncraft:blocks/Quartz"
                 }
-            }
+            },
+          "four1": {
+
+          },
+          "four2": {
+
+          },
+          "four3": {
+
+          },
+          "five1": {
+
+          },
+          "five2" :{
+
+          },
+          "five3" : {
+
+          },
+          "six1" : {
+
+          }
         }
     }
 }
