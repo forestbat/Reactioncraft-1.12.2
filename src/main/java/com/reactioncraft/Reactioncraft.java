@@ -20,6 +20,7 @@ import com.reactioncraft.world.Worldgen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Items;
@@ -27,6 +28,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeOcean;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -44,6 +47,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import java.awt.*;
+import java.util.List;
 import java.util.Random;
 
 //import com.reactioncraft.core.Remapper;
@@ -110,7 +114,18 @@ public class Reactioncraft
 
         EntityRegistry.registerModEntity(new ResourceLocation(MODID,"crawling_zombie"),EntityZombieCrawling.class,"crawling_zombie",eid++,instance,60,2,true,new Color(1,1,1).getRGB(),new Color(1,150,1).getRGB());
         EntitySpawnPlacementRegistry.setPlacementType(EntityZombieCrawling.class, EntityLiving.SpawnPlacementType.ON_GROUND);
-        //TODO biomes
+
+        //TODO biomes to spawn in
+        ForgeRegistries.BIOMES.forEach(biome -> {
+            if(!(biome instanceof BiomeOcean))
+            {
+                List<Biome.SpawnListEntry> listEntries= biome.getSpawnableList(EnumCreatureType.MONSTER);
+                //100 is the max weight
+                listEntries.add(new Biome.SpawnListEntry(EntitySkeletonCrawling.class,90,1,4));
+                listEntries.add(new Biome.SpawnListEntry(EntityZombieCrawling.class,90,1,4));
+                //and so on
+            }
+        });
     }
 
     @Mod.EventHandler
@@ -135,37 +150,7 @@ public class Reactioncraft
     public void registerVillagers(RegistryEvent.Register<VillagerRegistry.VillagerProfession> registryEvent)
     {
         IForgeRegistry<VillagerRegistry.VillagerProfession> registry=registryEvent.getRegistry();
-
-        VillagerRegistry.VillagerProfession regular=new VillagerRegistry.VillagerProfession(MODID+":regular",MODID+":textures/entity/rc_villager.png",MODID+":textures/entity/zombie_villager/zombie_rc_villager.png");
-        VillagerRegistry.VillagerCareer career=new VillagerRegistry.VillagerCareer(regular,"career1");
-        career.addTrade(1, new EntityVillager.ITradeList() {
-            @Override
-            public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {
-                recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,20+random.nextInt(4)),new ItemStack(ItemIndex.coinMould)));
-            }
-        });
-        registry.register(regular);
-
-        //TODO set trades
-        VillagerRegistry.VillagerProfession banker=new VillagerRegistry.VillagerProfession(MODID+":banker",MODID+":textures/entity/banker.png","");
-        VillagerRegistry.VillagerCareer villagerCareer=new VillagerRegistry.VillagerCareer(banker,"career1");
-        villagerCareer.addTrade(1, new EntityVillager.ITradeList() {
-            @Override
-            public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {
-                recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD),new ItemStack(ItemIndex.coins)));
-                recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,2),new ItemStack(ItemIndex.coins,1,1)));
-                //and so on
-            }
-        });
-        //when villager's level goes up, new trades are unlocked
-        villagerCareer.addTrade(2, new EntityVillager.ITradeList() {
-            @Override
-            public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {
-                recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,3),new ItemStack(ItemIndex.coins,1,2)));
-            }
-        });
-        registry.register(banker);
-
+        Villagers.register(registry);
     }
 
     @SubscribeEvent
