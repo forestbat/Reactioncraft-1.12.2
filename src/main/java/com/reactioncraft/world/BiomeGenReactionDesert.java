@@ -64,6 +64,7 @@ public class BiomeGenReactionDesert extends BiomeDesert
 //                    System.out.println(offset);
 
             }
+            else System.out.println(offset);
         }
 //        super.decorate(worldIn, rand, pos);
     }

@@ -30,21 +30,30 @@ public class EntityHydrolisc extends EntityTameable
         this.setSize(0.8F, 0.8F);
 //        this.fireResistance = 100;
         this.setSitting(false);
-        this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, this.aiSit=new EntityAISit(this));
-        this.tasks.addTask(2, this.aiTempt = new EntityAITempt(this, 0.20000000298023224D, Items.FISH, true));
-        tasks.addTask(3,new EntityAIOwnerHurtByTarget(this));
-        this.tasks.addTask(4, new EntityAIFollowOwner(this, 1, 10.0F, 5.0F));
-        tasks.addTask(5,new EntityAIOwnerHurtTarget(this));
-        this.tasks.addTask(6, new EntityAIPanic(this, 1));
-        this.tasks.addTask(8, new EntityAIWander(this, 1));
-        this.tasks.addTask(9, new EntityAILookIdle(this));
-        this.tasks.addTask(10, new EntityAIMoveIndoors(this));
 
     }
 
     protected void entityInit() {
         super.entityInit();
+    }
+
+    @Override
+    protected void initEntityAI() {
+        super.initEntityAI();
+        this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(1, this.aiSit=new EntityAISit(this));
+        this.tasks.addTask(2, this.aiTempt = new EntityAITempt(this, 0.20000000298023224D, Items.FISH, true));
+        tasks.addTask(3,new EntityAIAttackMelee(this,1,false));
+        this.tasks.addTask(4, new EntityAIFollowOwner(this, 1, 10.0F, 5.0F));
+        tasks.addTask(5,new EntityAIOwnerHurtTarget(this));
+//        this.tasks.addTask(6, new EntityAIPanic(this, 1));
+        this.tasks.addTask(8, new EntityAIWander(this, 1));
+        this.tasks.addTask(9, new EntityAILookIdle(this));
+        this.tasks.addTask(10, new EntityAIMoveIndoors(this));
+        targetTasks.addTask(1,new EntityAIOwnerHurtByTarget(this));
+        //TODO
+        ;
+        targetTasks.addTask(2,new EntityAIHurtByTarget(this,true));
     }
 
     @Override
@@ -101,8 +110,10 @@ public class EntityHydrolisc extends EntityTameable
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.4);
+        getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3);
+//        getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3);
     }
 
     /**

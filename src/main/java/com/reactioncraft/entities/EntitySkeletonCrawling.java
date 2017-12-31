@@ -96,8 +96,12 @@ public class EntitySkeletonCrawling extends EntityMob
         return EnumCreatureAttribute.UNDEAD;
     }
 
+    @Override
+    protected void dropFewItems(boolean wasRecentlyHit, int lootingModifier) {
+        super.dropFewItems(wasRecentlyHit, lootingModifier);
+    }
 
-//    public void dropRareDrop(int par1)
+    //    public void dropRareDrop(int par1)
 //    {
 //        switch (this.rand.nextInt(3))
 //        {
