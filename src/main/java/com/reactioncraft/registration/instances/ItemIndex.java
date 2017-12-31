@@ -5,6 +5,7 @@ import com.reactioncraft.items.*;
 import com.reactioncraft.items.chisels.ItemBaseChisel;
 import com.reactioncraft.items.tools.*;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSeeds;
 
 public class ItemIndex
 {
@@ -100,7 +101,7 @@ public class ItemIndex
     public static ItemBaseDoor cherry_door;
     public static ItemBase ancientFlower;
     public static ItemBase wrappedcorn;
-    public static ItemBase ancientSeeds;
+    public static ItemSeeds ancientSeeds;
     public static ItemBase sugarcaneItemBase;
     public static ItemBase cornSeed;
     public static ItemBase stalksItemBase;

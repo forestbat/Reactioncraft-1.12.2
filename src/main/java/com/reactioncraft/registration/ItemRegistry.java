@@ -11,9 +11,11 @@ import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.registration.instances.ItemIndex;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSeeds;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -48,29 +50,31 @@ public class ItemRegistry
         ItemIndex.pork_chunk      = register(new ItemFoodBase("raw_pork",     3, 0.6f, true),forgeRegistry);
 
         //Food Items
-        ItemIndex.ancientFruit = register(new ItemFoodBase("AncientFruit", 3, 0.6f, true),forgeRegistry);
+        ItemIndex.ancientFruit = register(new ItemFoodBase("AncientFruit", 3, 0.6f, false),forgeRegistry);
         ItemIndex.edibleFlesh = register(new ItemFoodBase("EdibleFlesh", 3, 0.6f, true),forgeRegistry);
         ItemIndex.cookedCorn         = register(new ItemFoodBase("cookedCorn", 3, 0.6f, true),forgeRegistry);
         ItemIndex.popcornseeds       = register(new ItemBase("popcornseeds"),forgeRegistry);
         ItemIndex.bagofpopcorn       = register(new ItemBase("bagofpopcorn"),forgeRegistry);
-        ItemIndex.poppedbagofpopcorn = register(new ItemFoodBase("poppedbagofpopcorn", 3, 0.6f, true),forgeRegistry);
-        ItemIndex.unwrappedCorn = register(new ItemFoodBase("UnwrappedCorn", 3, 0.6f, true),forgeRegistry);
-        ItemIndex.rawcorn            = register(new ItemFoodBase("rawcorn", 3, 0.6f, true),forgeRegistry);
+        ItemIndex.poppedbagofpopcorn = register(new ItemFoodBase("poppedbagofpopcorn", 3, 0.6f, false),forgeRegistry);
+        ItemIndex.unwrappedCorn = register(new ItemFoodBase("UnwrappedCorn", 3, 0.6f, false),forgeRegistry);
+        ItemIndex.rawcorn            = register(new ItemFoodBase("rawcorn", 3, 0.6f, false),forgeRegistry);
         ItemIndex.chickenNuggets = register(new ItemFoodBase("ChickenNuggets", 3, 0.6f, true),forgeRegistry);
         ItemIndex.rawNuggets = register(new ItemFoodBase("RawNuggets", 3, 0.6f, true),forgeRegistry);
-        ItemIndex.slicedBread = register(new ItemFoodBase("SlicedBread", 3, 0.6f, true),forgeRegistry);
+        ItemIndex.slicedBread = register(new ItemFoodBase("SlicedBread", 3, 0.6f, false),forgeRegistry);
         ItemIndex.hamSandwich = register(new ItemFoodBase("HamSandwich", 3, 0.6f, true),forgeRegistry);
         ItemIndex.hamburger = register(new ItemFoodBase("Hamburger", 3, 0.6f, true),forgeRegistry);
-        ItemIndex.cheeseburger = register(new ItemFoodBase("Cheeseburger", 3, 0.6f, true),forgeRegistry);
+        ItemIndex.cheeseburger = register(new ItemFoodBase("Cheeseburger", 3, 0.6f, false),forgeRegistry);
         ItemIndex.bacon = register(new ItemFoodBase("Bacon", 3, 0.6f, true),forgeRegistry);
         ItemIndex.raw_bacon          = register(new ItemFoodBase("raw_bacon", 3, 0.6f, true),forgeRegistry);
         ItemIndex.cheese             = register(new ItemFoodBase("cheese", 3, 0.6f, true),forgeRegistry);
         ItemIndex.churn              = (ItemBase) register(new ItemBase("churn"),forgeRegistry).setMaxDamage(10);
-        ItemIndex.buns               = register(new ItemFoodBase("buns", 3, 0.6f, true),forgeRegistry);
-        ItemIndex.salmonRaw          = register(new ItemFoodBase("salmon_raw", 3, 0.6f, true),forgeRegistry);
-        ItemIndex.salmon             = register(new ItemFoodBase("salmon", 3, 0.6f, true),forgeRegistry);
-        ItemIndex.yellowTailRaw = register(new ItemFoodBase("YellowTailRaw", 3, 0.6f, true),forgeRegistry);
-        ItemIndex.yellowTailCooked = register(new ItemFoodBase("YellowTailCooked", 3, 0.6f, true),forgeRegistry);
+        ItemIndex.buns               = register(new ItemFoodBase("buns", 3, 0.6f, false),forgeRegistry);
+        ItemIndex.salmonRaw          = register(new ItemFoodBase("salmon_raw", 3, 0.6f, false),forgeRegistry);
+        ItemIndex.salmon             = register(new ItemFoodBase("salmon", 3, 0.6f, false),forgeRegistry);
+        ItemIndex.yellowTailRaw = register(new ItemFoodBase("YellowTailRaw", 3, 0.6f, false),forgeRegistry);
+        ItemIndex.yellowTailCooked = register(new ItemFoodBase("YellowTailCooked", 3, 0.6f, false),forgeRegistry);
+
+
 
         //Net Items
         ItemIndex.hilt         = register(new ItemPieceHilt("piece_hilt"),forgeRegistry);
@@ -120,7 +124,8 @@ public class ItemRegistry
         ItemIndex.rcendereye            = register(new ItemBase("rcendereye")          .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.ancientFlower = register(new ItemBase("AncientFlower")       .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.wrappedcorn = register(new ItemBase("Wrappedcorn")         .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
-        ItemIndex.ancientSeeds = register(new ItemBase("AncientSeeds")        .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+        ItemIndex.ancientSeeds =(ItemSeeds) register(new ItemSeeds(BlockIndex.ancientPlant, Blocks.FARMLAND).setUnlocalizedName("AncientSeeds").setRegistryName(Reactioncraft.MODID,"ancientseeds").setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+        Reactioncraft.proxy.registerItemRenderer(ItemIndex.ancientSeeds,0,"ancientseeds");
         ItemIndex.sugarcaneItemBase     = register(new ItemBase("sugarcaneItemBase")   .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.cornSeed = register(new ItemBase("CornSeed")            .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.stalksItemBase        = register(new ItemBase("stalks_item_base")      .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);

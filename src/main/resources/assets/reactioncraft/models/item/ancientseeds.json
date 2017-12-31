@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "reactioncraft:items/AncientSeeds"
+        "layer0": "reactioncraft:items/ancientseeds"
     }
 }

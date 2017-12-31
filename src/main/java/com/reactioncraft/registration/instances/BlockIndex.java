@@ -50,7 +50,7 @@ public class BlockIndex
     public static BlockClayalizer clayalizerIdle;
     public static BlockClayalizer clayalizerActive;
     public static BlockHive rchive;
-    public static BlockBase ancientPlant;
+    public static BlockAncientPlant ancientPlant;
     public static BlockBase sugarcaneBlockBase;
     public static BlockBase cornBlockBase;
     public static BlockBase cornStalk;
