@@ -15,6 +15,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -23,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -185,7 +187,11 @@ public class BlockBrickOven extends BlockContainer
 
             if (tileentity instanceof TileEntityBrickOven)
             {
-                InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityBrickOven)tileentity);
+
+                InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),((TileEntityBrickOven) tileentity).outputHandler.getStackInSlot(0));
+                InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),((TileEntityBrickOven) tileentity).itemHandler.getStackInSlot(0));
+                InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),((TileEntityBrickOven) tileentity).itemHandler.getStackInSlot(1));
+
                 worldIn.updateComparatorOutputLevel(pos, this);
             }
         }
@@ -262,10 +268,7 @@ public class BlockBrickOven extends BlockContainer
         return new BlockStateContainer(this, FACING);
     }
     
-//    public void registerItemModel(ItemBlock itemBlock)
-//	{
-//		Reactioncraft.proxy.registerItemRenderer(itemBlock, 0, name);
-//	}
+
 
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {

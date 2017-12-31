@@ -8,23 +8,24 @@ import net.minecraft.inventory.*;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.SlotItemHandler;
 
 import javax.annotation.Nullable;
 
 public class ContainerBrickOven extends Container
 {
-    private final IInventory brickOven;
+    private final TileEntityBrickOven brickOven;
     private int cookTime;
     private int totalCookTime;
     private int furnaceBurnTime;
     private int currentItemBurnTime;
 
-    public ContainerBrickOven(InventoryPlayer playerInventory, IInventory furnaceInventory)
+    public ContainerBrickOven(InventoryPlayer playerInventory, TileEntityBrickOven furnaceInventory)
     {
         this.brickOven = furnaceInventory;
-        this.addSlotToContainer(new Slot(furnaceInventory, 0, 56, 17));
-        this.addSlotToContainer(new SlotFurnaceFuel(furnaceInventory, 1, 56, 53));
-        this.addSlotToContainer(new SlotFurnaceOutput(playerInventory.player, furnaceInventory, 2, 116, 35));
+        this.addSlotToContainer(new SlotItemHandler(furnaceInventory.itemHandler, 0, 56, 17));
+        this.addSlotToContainer(new SlotItemHandler(furnaceInventory.itemHandler, 1, 56, 53));
+        this.addSlotToContainer(new SlotItemHandler(furnaceInventory.outputHandler, 0, 116, 35));
 
         for (int i = 0; i < 3; ++i)
         {
@@ -43,7 +44,7 @@ public class ContainerBrickOven extends Container
     public void addListener(IContainerListener listener)
     {
         super.addListener(listener);
-        listener.sendAllWindowProperties(this, this.brickOven);
+//        listener.sendAllWindowProperties(this, this.brickOven);
     }
 
     /**
@@ -53,46 +54,46 @@ public class ContainerBrickOven extends Container
     {
         super.detectAndSendChanges();
 
-        for (int i = 0; i < this.listeners.size(); ++i)
-        {
-            IContainerListener icontainerlistener = this.listeners.get(i);
-
-            if (this.cookTime != this.brickOven.getField(2))
-            {
-                icontainerlistener.sendWindowProperty(this, 2, this.brickOven.getField(2));
-            }
-
-            if (this.furnaceBurnTime != this.brickOven.getField(0))
-            {
-                icontainerlistener.sendWindowProperty(this, 0, this.brickOven.getField(0));
-            }
-
-            if (this.currentItemBurnTime != this.brickOven.getField(1))
-            {
-                icontainerlistener.sendWindowProperty(this, 1, this.brickOven.getField(1));
-            }
-
-            if (this.totalCookTime != this.brickOven.getField(3))
-            {
-                icontainerlistener.sendWindowProperty(this, 3, this.brickOven.getField(3));
-            }
-        }
-
-        this.cookTime = this.brickOven.getField(2);
-        this.furnaceBurnTime = this.brickOven.getField(0);
-        this.currentItemBurnTime = this.brickOven.getField(1);
-        this.totalCookTime = this.brickOven.getField(3);
+//        for (int i = 0; i < this.listeners.size(); ++i)
+//        {
+//            IContainerListener icontainerlistener = this.listeners.get(i);
+//
+//            if (this.cookTime != this.brickOven.getField(2))
+//            {
+//                icontainerlistener.sendWindowProperty(this, 2, this.brickOven.getField(2));
+//            }
+//
+//            if (this.furnaceBurnTime != this.brickOven.getField(0))
+//            {
+//                icontainerlistener.sendWindowProperty(this, 0, this.brickOven.getField(0));
+//            }
+//
+//            if (this.currentItemBurnTime != this.brickOven.getField(1))
+//            {
+//                icontainerlistener.sendWindowProperty(this, 1, this.brickOven.getField(1));
+//            }
+//
+//            if (this.totalCookTime != this.brickOven.getField(3))
+//            {
+//                icontainerlistener.sendWindowProperty(this, 3, this.brickOven.getField(3));
+//            }
+//        }
+//
+//        this.cookTime = this.brickOven.getField(2);
+//        this.furnaceBurnTime = this.brickOven.getField(0);
+//        this.currentItemBurnTime = this.brickOven.getField(1);
+//        this.totalCookTime = this.brickOven.getField(3);
     }
 
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(int id, int data)
     {
-        this.brickOven.setField(id, data);
+//        this.brickOven.setField(id, data);
     }
 
     public boolean canInteractWith(EntityPlayer playerIn)
     {
-        return this.brickOven.isUsableByPlayer(playerIn);
+        return true;
     }
 
     /**

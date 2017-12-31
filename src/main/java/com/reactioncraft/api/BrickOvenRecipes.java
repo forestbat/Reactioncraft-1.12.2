@@ -1,6 +1,7 @@
 package com.reactioncraft.api;
 
 import com.google.common.collect.Maps;
+import com.reactioncraft.Tools;
 import com.reactioncraft.core.Logger;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -52,7 +53,7 @@ public class BrickOvenRecipes
      */
     public void addSmeltingRecipe(ItemStack input, ItemStack stack, float experience)
     {
-        if (getSmeltingResult(input) != null) { Logger.info("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
+        if (!getSmeltingResult(input).isEmpty()) { Logger.info("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
         this.smeltingList.put(input, stack);
         this.experienceList.put(stack, experience);
     }
@@ -64,7 +65,7 @@ public class BrickOvenRecipes
     {
         for (Entry<ItemStack, ItemStack> entry : this.smeltingList.entrySet())
         {
-            if (this.compareItemStacks(stack,entry.getKey()))
+            if (Tools.areItemTypesEqual(stack, entry.getKey()))
             {
                 return entry.getValue();
             }
@@ -93,7 +94,7 @@ public class BrickOvenRecipes
 
         for (Entry<ItemStack, Float> entry : this.experienceList.entrySet())
         {
-            if (this.compareItemStacks(stack, (ItemStack)entry.getKey()))
+            if (Tools.areItemTypesEqual(stack, entry.getKey()))
             {
                 return entry.getValue();
             }

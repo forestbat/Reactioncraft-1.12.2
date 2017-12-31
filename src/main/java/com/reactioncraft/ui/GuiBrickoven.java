@@ -16,9 +16,9 @@ public class GuiBrickoven extends UIContainerBase
     private static final ResourceLocation BRICK_OVEN_TEXTURE = new ResourceLocation(Reactioncraft.MODID,"textures/gui/brickoven.png");
     /** The player inventory bound to this GUI. */
     private final InventoryPlayer playerInventory;
-    private final IInventory brickoven;
+    private final TileEntityBrickOven brickoven;
 
-    public GuiBrickoven(InventoryPlayer playerInv, IInventory furnaceInv)
+    public GuiBrickoven(InventoryPlayer playerInv, TileEntityBrickOven furnaceInv)
     {
         super(new ContainerBrickOven(playerInv, furnaceInv));
         this.playerInventory = playerInv;
@@ -46,7 +46,7 @@ public class GuiBrickoven extends UIContainerBase
         int j = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(i, j, 0, 0, this.xSize, this.ySize);
 
-        if (TileEntityBrickOven.isBurning(this.brickoven))
+        if (brickoven.isBurning())
         {
             int k = this.getBurnLeftScaled(13);
             this.drawTexturedModalRect(i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
@@ -58,20 +58,20 @@ public class GuiBrickoven extends UIContainerBase
 
     private int getCookProgressScaled(int pixels)
     {
-        int i = this.brickoven.getField(2);
-        int j = this.brickoven.getField(3);
-        return j != 0 && i != 0 ? i * pixels / j : 0;
+//        int i = this.brickoven.getField(2);
+//        int j = this.brickoven.getField(3);
+        return 0;//j != 0 && i != 0 ? i * pixels / j : 0;
     }
 
     private int getBurnLeftScaled(int pixels)
     {
-        int i = this.brickoven.getField(1);
+//        int i = this.brickoven.getField(1);
+//
+//        if (i == 0)
+//        {
+//            i = 200;
+//        }
 
-        if (i == 0)
-        {
-            i = 200;
-        }
-
-        return this.brickoven.getField(0) * pixels / i;
+        return 0;//this.brickoven.getField(0) * pixels / i;
     }
 }
