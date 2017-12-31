@@ -179,6 +179,7 @@ public class BlockRegistry
 		BlockIndex.cherryTreeSapling = (BlockCherryTreeSapling) register(new BlockCherryTreeSapling(),"cherry_tree_sapling",forgeRegistry);
 
 		BlockIndex.ancientPlant= (BlockAncientPlant) register(new BlockAncientPlant(),"ancientplant",forgeRegistry);
+		BlockIndex.cornBlock= (BlockCornPlant) register(new BlockCornPlant(),"corn",forgeRegistry);
 
 		BlockIndex.clearBlockBase= (BlockClear) register(new BlockClear(),"clear",forgeRegistry);
 		BlockIndex.newSponge= (BlockNewSponge) register(new BlockNewSponge(16),"sponge",forgeRegistry);

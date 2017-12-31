@@ -21,6 +21,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -83,6 +84,7 @@ public class Reactioncraft
         MinecraftForge.EVENT_BUS.register(new LootTableHandler());
 
         TileEntityRegistry.registerTileEntities();
+
 
         int eid=0;
         //NOTICE the colors can be changed as needed. First is shell color, second is spot color

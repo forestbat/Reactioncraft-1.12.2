@@ -52,7 +52,7 @@ public class BlockIndex
     public static BlockHive rchive;
     public static BlockAncientPlant ancientPlant;
     public static BlockBase sugarcaneBlockBase;
-    public static BlockBase cornBlockBase;
+    public static BlockCornPlant cornBlock;
     public static BlockBase cornStalk;
 
 

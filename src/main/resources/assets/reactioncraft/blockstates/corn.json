@@ -1,0 +1,28 @@
+{
+    "variants": {
+        "age=5": {
+            "model": "reactioncraft:corn5"
+        },
+        "age=4": {
+            "model": "reactioncraft:corn4"
+        },
+        "age=3": {
+            "model": "reactioncraft:corn3"
+        },
+        "age=2": {
+            "model": "reactioncraft:corn2"
+        },
+        "age=1": {
+            "model": "reactioncraft:corn1"
+        },
+        "age=7": {
+            "model": "reactioncraft:corn7"
+        },
+        "age=6": {
+            "model": "reactioncraft:corn6"
+        },
+        "age=0" : {
+            "model" : "reactioncraft:corn0"
+        }
+    }
+}

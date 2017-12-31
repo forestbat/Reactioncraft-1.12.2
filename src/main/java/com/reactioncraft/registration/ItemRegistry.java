@@ -124,10 +124,12 @@ public class ItemRegistry
         ItemIndex.rcendereye            = register(new ItemBase("rcendereye")          .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.ancientFlower = register(new ItemBase("AncientFlower")       .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.wrappedcorn = register(new ItemBase("Wrappedcorn")         .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
-        ItemIndex.ancientSeeds =(ItemSeeds) register(new ItemSeeds(BlockIndex.ancientPlant, Blocks.FARMLAND).setUnlocalizedName("AncientSeeds").setRegistryName(Reactioncraft.MODID,"ancientseeds").setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+        ItemIndex.ancientSeeds =(ItemSeeds) register(new ItemBaseSeed(BlockIndex.ancientPlant, Blocks.FARMLAND,"AncientSeeds").setRegistryName(Reactioncraft.MODID,"ancientseeds").setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         Reactioncraft.proxy.registerItemRenderer(ItemIndex.ancientSeeds,0,"ancientseeds");
         ItemIndex.sugarcaneItemBase     = register(new ItemBase("sugarcaneItemBase")   .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
-        ItemIndex.cornSeed = register(new ItemBase("CornSeed")            .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+
+        ItemIndex.cornSeed = register((ItemSeeds) new ItemBaseSeed(BlockIndex.cornBlock,Blocks.FARMLAND,"CornSeed").setRegistryName(Reactioncraft.MODID,"cornseed").setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+        Reactioncraft.proxy.registerItemRenderer(ItemIndex.cornSeed,0,"cornseed");
         ItemIndex.stalksItemBase        = register(new ItemBase("stalks_item_base")      .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
 
         //Door Items
@@ -208,11 +210,6 @@ public class ItemRegistry
         ItemIndex.pollencomb       = register(new ItemBase("pollencomb")      .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.blackdiamondbore = register(new ItemBase("Blackdiamondbore").setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.bloodstonebore = register(new ItemBase("Bloodstonebore")  .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
-    }
-
-    private static void registerRender(Item item) 
-    {
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reactioncraft.MODID + ":" + item.getUnlocalizedName().substring(5),"inventory"));
     }
 
    

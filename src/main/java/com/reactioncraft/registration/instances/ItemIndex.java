@@ -103,7 +103,7 @@ public class ItemIndex
     public static ItemBase wrappedcorn;
     public static ItemSeeds ancientSeeds;
     public static ItemBase sugarcaneItemBase;
-    public static ItemBase cornSeed;
+    public static ItemSeeds cornSeed;
     public static ItemBase stalksItemBase;
     
     //Made For Other Mods
