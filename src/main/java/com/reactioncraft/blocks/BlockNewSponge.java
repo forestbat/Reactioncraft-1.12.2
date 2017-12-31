@@ -34,25 +34,6 @@ public class BlockNewSponge extends BlockBase
     }
 
 	@Override
-	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
-		for(int xCount = -absorbtion; xCount<absorbtion+1; xCount++)
-		{
-			for(int yCount = -absorbtion; yCount<absorbtion+1; yCount++)
-			{
-				for(int zCount = -absorbtion; zCount<absorbtion+1; zCount++)
-				{
-					IBlockState blockState=worldIn.getBlockState(new BlockPos(xCount+pos.getX(),yCount+pos.getY(),zCount+pos.getZ()));
-					if(blockState == BlockIndex.clearBlockBase.getDefaultState())
-					{
-						worldIn.setBlockToAir(pos);
-					}
-				}
-			}
-		}
-	}
-
-
-	@Override
 	public void onBlockDestroyedByExplosion(World worldIn, BlockPos pos, Explosion explosionIn) {
 		onBlockDestroyedByPlayer(worldIn,pos,worldIn.getBlockState(pos));
 	}
@@ -77,7 +58,7 @@ public class BlockNewSponge extends BlockBase
 					IBlockState blockState=world.getBlockState(blockPos);
 					if(blockState== Blocks.FLOWING_WATER.getDefaultState() || blockState==Blocks.WATER.getDefaultState())
 					{
-						world.setBlockState(blockPos,BlockIndex.clearBlockBase.getDefaultState());
+						world.setBlockToAir(blockPos);
 					}
 				}
 			}

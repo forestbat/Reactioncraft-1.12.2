@@ -27,7 +27,6 @@ public class BlockIndex
     
     public static BlockCherryTreeLog cherrywood;
     public static BlockNewSponge newSponge;
-    public static BlockClear clearBlockBase;
     public static BlockBase snowBlockBase;
     public static BlockChainLadder chainladder;
     public static BlockBase enderportal;

@@ -16,6 +16,7 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -78,6 +79,12 @@ public class BlockRegistry
 
 		registerBlockItem(BlockIndex.bookcases,registryEvent);
 		registerBlockItem(BlockIndex.desertBlocks,registryEvent);
+//		Reactioncraft.proxy.registerItemBlockRenderer(itemBlock,0);
+//		ItemMulti itemMulti=new ItemMulti(BlockIndex.desertBlocks);
+//		itemMulti.setRegistryName(BlockIndex.desertBlocks.getRegistryName());
+//		registryEvent.getRegistry().register(itemMulti);
+//		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(itemMulti,"one1","one2");
+
 		registerBlockItem(BlockIndex.glowingGlass,registryEvent);
 		registerBlockItem(BlockIndex.hireoglyph,registryEvent);
 		registerBlockItem(BlockIndex.surfaceOres,registryEvent);
@@ -181,7 +188,7 @@ public class BlockRegistry
 		BlockIndex.ancientPlant= (BlockAncientPlant) register(new BlockAncientPlant(),"ancientplant",forgeRegistry);
 		BlockIndex.cornBlock= (BlockCornPlant) register(new BlockCornPlant(),"corn",forgeRegistry);
 
-		BlockIndex.clearBlockBase= (BlockClear) register(new BlockClear(),"clear",forgeRegistry);
+//		BlockIndex.clearBlockBase= (BlockClear) register(new BlockClear(),"clear",forgeRegistry);
 		BlockIndex.newSponge= (BlockNewSponge) register(new BlockNewSponge(16),"sponge",forgeRegistry);
 
 		BlockIndex.chainladder= (BlockChainLadder) register(new BlockChainLadder(),"chain_ladder",forgeRegistry);
