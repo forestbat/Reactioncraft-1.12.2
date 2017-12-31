@@ -204,6 +204,30 @@
                 "y": 180
             }
         ],
+        "facing=west,half=lower,hinge=right,open=true,powered=true": [
+            {
+                "model": "reactioncraft:cherry_door_bottom",
+                "y": 90
+            }
+        ],
+        "facing=west,half=lower,hinge=right,open=true,powered=false": [
+            {
+                "model": "reactioncraft:cherry_door_bottom",
+                "y": 90
+            }
+        ],
+        "facing=west,half=lower,hinge=right,open=false,powered=true": [
+            {
+                "model": "reactioncraft:cherry_door_bottom_rh",
+                "y": 180
+            }
+        ],
+        "facing=west,half=lower,hinge=right,open=false,powered=false": [
+            {
+                "model": "reactioncraft:cherry_door_bottom_rh",
+                "y": 180
+            }
+        ],
         "facing=west,half=upper,hinge=left,open=true,powered=true": [
             {
                 "model": "reactioncraft:cherry_door_top_rh",
