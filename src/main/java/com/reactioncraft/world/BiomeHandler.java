@@ -22,17 +22,20 @@ public class BiomeHandler
 
 	private void registerBiomes(IForgeRegistry<Biome> biomes)
 	{
-		BiomeGenReactionDesert reactionDesert_BIOME = new BiomeGenReactionDesert(new Biome.BiomeProperties("Reaction Desert")
+		BiomeGenReactionDesert reactionDesert;
+		reactionDesert = new BiomeGenReactionDesert(new Biome.BiomeProperties("Reaction Desert")
 				.setBaseHeight(0.125F)
 				.setHeightVariation(0.05F)
 				.setTemperature(2.0F)
 				.setRainfall(0.0F)
 				.setRainDisabled());
-		reactionDesert_BIOME.setRegistryName("reaction_desert");
-		biomes.register(reactionDesert_BIOME);
-		BiomeManager.addBiome(BiomeType.DESERT, new BiomeEntry(reactionDesert_BIOME, 1000));
-		BiomeManager.addSpawnBiome(reactionDesert_BIOME);
-		BiomeDictionary.addTypes(reactionDesert_BIOME, Type.DRY);
-	    BiomeManager.addVillageBiome(reactionDesert_BIOME, true);
+		reactionDesert.setRegistryName("reaction_desert");
+		biomes.register(reactionDesert);
+		BiomeManager.addBiome(BiomeType.DESERT, new BiomeEntry(reactionDesert, 1000));
+		BiomeManager.addSpawnBiome(reactionDesert);
+		BiomeDictionary.addTypes(reactionDesert, Type.DRY);
+	    BiomeManager.addVillageBiome(reactionDesert, true);
+
+
 	}
 }

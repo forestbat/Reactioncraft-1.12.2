@@ -56,16 +56,20 @@ public class BiomeGenReactionDesert extends BiomeDesert
         {
             blockState=worldIn.getBlockState(offset=offset.down());
         }
-//        if(rand.nextInt(64)==1)
-        {
-            if (!cherryTrees.generate(worldIn, rand, offset)) {
 
-                    cactusGenerator.generate(worldIn, rand, offset);
+            if (rand.nextInt(64)==1 && !cherryTrees.generate(worldIn, rand, offset.up())) {
+
+
 //                    System.out.println(offset);
 
             }
-            else System.out.println(offset);
-        }
-//        super.decorate(worldIn, rand, pos);
+            else{
+                if(!cactusGenerator.generate(worldIn, rand, offset.up()))
+                {
+//                    System.out.println(offset);
+                    super.decorate(worldIn, rand, pos);
+                };
+            }
+
     }
 }
