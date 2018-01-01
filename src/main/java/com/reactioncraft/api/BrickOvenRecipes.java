@@ -67,7 +67,7 @@ public class BrickOvenRecipes
         {
             if (Tools.areItemTypesEqual(stack, entry.getKey()))
             {
-                return entry.getValue();
+                return entry.getValue().copy();
             }
         }
 

@@ -46,11 +46,8 @@ public class GuiBrickoven extends UIContainerBase
         int j = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(i, j, 0, 0, this.xSize, this.ySize);
 
-        if (brickoven.isBurning())
-        {
-            int k = this.getBurnLeftScaled(13);
-            this.drawTexturedModalRect(i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
-        }
+        int k = this.getBurnLeftScaled(13);
+        this.drawTexturedModalRect(i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
 
         int l = this.getCookProgressScaled(24);
         this.drawTexturedModalRect(i + 79, j + 34, 176, 14, l + 1, 16);
@@ -58,20 +55,15 @@ public class GuiBrickoven extends UIContainerBase
 
     private int getCookProgressScaled(int pixels)
     {
-//        int i = this.brickoven.getField(2);
-//        int j = this.brickoven.getField(3);
-        return 0;//j != 0 && i != 0 ? i * pixels / j : 0;
+        int i = this.brickoven.totalCookTime;
+        int j =TileEntityBrickOven.OVEN_PROCESS_TIME;
+        return i != 0 ? i * pixels / j : 0;
     }
 
     private int getBurnLeftScaled(int pixels)
     {
-//        int i = this.brickoven.getField(1);
-//
-//        if (i == 0)
-//        {
-//            i = 200;
-//        }
-
-        return 0;//this.brickoven.getField(0) * pixels / i;
+        int i = this.brickoven.currentItemBurnTime;
+        int fuelTime=brickoven.burnTime;
+        return (fuelTime!=0 && i!=0)   ? i* pixels / fuelTime : -1;
     }
 }

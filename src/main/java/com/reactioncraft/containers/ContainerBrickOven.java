@@ -15,10 +15,10 @@ import javax.annotation.Nullable;
 public class ContainerBrickOven extends Container
 {
     private final TileEntityBrickOven brickOven;
-    private int cookTime;
-    private int totalCookTime;
-    private int furnaceBurnTime;
-    private int currentItemBurnTime;
+//    private int cookTime;
+//    private int totalCookTime;
+//    private int furnaceBurnTime;
+//    private int currentItemBurnTime;
 
     public ContainerBrickOven(InventoryPlayer playerInventory, TileEntityBrickOven furnaceInventory)
     {
