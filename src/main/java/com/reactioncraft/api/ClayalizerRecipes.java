@@ -1,7 +1,9 @@
 package com.reactioncraft.api;
 
 import com.google.common.collect.Maps;
+import com.reactioncraft.Tools;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -25,7 +27,8 @@ public class ClayalizerRecipes
 
     private ClayalizerRecipes()
     {
-      
+        //test recipe
+        addSmeltingRecipeForBlock(Blocks.STONE,new ItemStack(Blocks.MELON_BLOCK),0.3f);
     }
 
     /**
@@ -49,7 +52,7 @@ public class ClayalizerRecipes
      */
     public void addSmeltingRecipe(ItemStack input, ItemStack stack, float experience)
     {
-        if (getSmeltingResult(input) != null) { net.minecraftforge.fml.common.FMLLog.info("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
+        if (!getSmeltingResult(input).isEmpty()) { net.minecraftforge.fml.common.FMLLog.info("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
         this.smeltingList.put(input, stack);
         this.experienceList.put(stack, Float.valueOf(experience));
     }
@@ -57,46 +60,18 @@ public class ClayalizerRecipes
     /**
      * Returns the smelting result of an item.
      */
-    @Nullable
     public ItemStack getSmeltingResult(ItemStack stack)
     {
         for (Entry<ItemStack, ItemStack> entry : this.smeltingList.entrySet())
         {
-            if (this.compareItemStacks(stack, (ItemStack)entry.getKey()))
+            if (Tools.areItemTypesEqual(stack, entry.getKey()))
             {
-                return (ItemStack)entry.getValue();
+                return entry.getValue().copy();
             }
         }
 
-        return null;
+        return ItemStack.EMPTY;
     }
 
-    /**
-     * Compares two itemstacks to ensure that they are the same. This checks both the item and the metadata of the item.
-     */
-    private boolean compareItemStacks(ItemStack stack1, ItemStack stack2)
-    {
-        return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata());
-    }
 
-    public Map<ItemStack, ItemStack> getSmeltingList()
-    {
-        return this.smeltingList;
-    }
-
-    public float getSmeltingExperience(ItemStack stack)
-    {
-        float ret = stack.getItem().getSmeltingExperience(stack);
-        if (ret != -1) return ret;
-
-        for (Entry<ItemStack, Float> entry : this.experienceList.entrySet())
-        {
-            if (this.compareItemStacks(stack, (ItemStack)entry.getKey()))
-            {
-                return ((Float)entry.getValue()).floatValue();
-            }
-        }
-
-        return 0.0F;
-    }
 }

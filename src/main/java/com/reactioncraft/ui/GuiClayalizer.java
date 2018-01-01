@@ -5,7 +5,6 @@ import com.reactioncraft.containers.ContainerClayalizer;
 import com.reactioncraft.tiles.TileEntityClayalizer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -16,9 +15,9 @@ public class GuiClayalizer extends UIContainerBase
     private static final ResourceLocation FURNACE_GUI_TEXTURES = new ResourceLocation(Reactioncraft.MODID,"textures/gui/clayalizer.png");
     /** The player inventory bound to this GUI. */
     private final InventoryPlayer playerInventory;
-    private final IInventory claylizer;
+    private final TileEntityClayalizer claylizer;
 
-    public GuiClayalizer(InventoryPlayer playerInv, IInventory furnaceInv)
+    public GuiClayalizer(InventoryPlayer playerInv, TileEntityClayalizer furnaceInv)
     {
         super(new ContainerClayalizer(playerInv, furnaceInv));
         this.playerInventory = playerInv;
@@ -46,11 +45,8 @@ public class GuiClayalizer extends UIContainerBase
         int j = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(i, j, 0, 0, this.xSize, this.ySize);
 
-        if (TileEntityClayalizer.isBurning(this.claylizer))
-        {
-            int k = this.getBurnLeftScaled(13);
-            this.drawTexturedModalRect(i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
-        }
+        int k = this.getBurnLeftScaled(13);
+        this.drawTexturedModalRect(i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
 
         int l = this.getCookProgressScaled(24);
         this.drawTexturedModalRect(i + 79, j + 34, 176, 14, l + 1, 16);
@@ -58,20 +54,17 @@ public class GuiClayalizer extends UIContainerBase
 
     private int getCookProgressScaled(int pixels)
     {
-        int i = this.claylizer.getField(2);
-        int j = this.claylizer.getField(3);
-        return j != 0 && i != 0 ? i * pixels / j : 0;
+        int i = this.claylizer.totalCookTime;
+        int j =TileEntityClayalizer.PROCESS_TIME;
+        return i != 0 ? i * pixels / j : 0;
     }
 
     private int getBurnLeftScaled(int pixels)
     {
-        int i = this.claylizer.getField(1);
+        int i = this.claylizer.currentItemBurnTime;
 
-        if (i == 0)
-        {
-            i = 200;
-        }
+        int lbt=claylizer.fuelburnTime;
 
-        return this.claylizer.getField(0) * pixels / i;
+        return (lbt!=0 && i!=0)  ? i * pixels / lbt: -1;
     }
 }

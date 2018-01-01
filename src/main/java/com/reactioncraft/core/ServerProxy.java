@@ -4,6 +4,7 @@ import com.reactioncraft.containers.ContainerBrickOven;
 import com.reactioncraft.containers.ContainerClayalizer;
 import com.reactioncraft.containers.ContainerFreezer;
 import com.reactioncraft.tiles.TileEntityBrickOven;
+import com.reactioncraft.tiles.TileEntityClayalizer;
 import com.reactioncraft.ui.GuiBrickoven;
 import com.reactioncraft.ui.GuiClayalizer;
 import com.reactioncraft.ui.GuiFreezer;
@@ -60,7 +61,7 @@ public class ServerProxy implements IGuiHandler
 				case FREEZER:
 					return new ContainerFreezer(player.inventory, (IInventory) tileEntity);
 				case CLAYLISER:
-					return new ContainerClayalizer(player.inventory, (IInventory) tileEntity);
+					return new ContainerClayalizer(player.inventory, (TileEntityClayalizer) tileEntity);
 			}
 			throw new IllegalArgumentException("No gui with id " + ID);
 		}
@@ -78,7 +79,7 @@ public class ServerProxy implements IGuiHandler
 				case BRICK_OVEN: {
 					return new GuiBrickoven(player.inventory, (TileEntityBrickOven) tileEntity);
 				}
-				case CLAYLISER:return new GuiClayalizer(player.inventory, (IInventory) tileEntity);
+				case CLAYLISER:return new GuiClayalizer(player.inventory, (TileEntityClayalizer) tileEntity);
 				case FREEZER:return new GuiFreezer(player.inventory, (IInventory) tileEntity);
 			}
 		}

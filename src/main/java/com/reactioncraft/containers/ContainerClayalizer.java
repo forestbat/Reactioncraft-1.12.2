@@ -8,24 +8,20 @@ import net.minecraft.inventory.*;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.SlotItemHandler;
 
 import javax.annotation.Nullable;
 
 public class ContainerClayalizer extends Container
 {
-    private final IInventory clayliser;
-    private int cookTime;
-    private int totalCookTime;
-    private int furnaceBurnTime;
-    private int currentItemBurnTime;
+    private final TileEntityClayalizer clayliser;
 
-    public ContainerClayalizer(InventoryPlayer playerInventory, IInventory furnaceInventory)
+    public ContainerClayalizer(InventoryPlayer playerInventory, TileEntityClayalizer furnaceInventory)
     {
         this.clayliser = furnaceInventory;
-        this.addSlotToContainer(new Slot(furnaceInventory, 0, 56, 17));
-        this.addSlotToContainer(new SlotFurnaceFuel(furnaceInventory, 1, 56, 53));
-        this.addSlotToContainer(new SlotFurnaceOutput(playerInventory.player, furnaceInventory, 2, 116, 35));
-
+        this.addSlotToContainer(new SlotItemHandler(furnaceInventory.itemHandler, 0, 56, 17));
+        this.addSlotToContainer(new SlotItemHandler(furnaceInventory.itemHandler, 1, 56, 53));
+        this.addSlotToContainer(new SlotItemHandler(furnaceInventory.outputHandler, 0, 116, 35));
         for (int i = 0; i < 3; ++i)
         {
             for (int j = 0; j < 9; ++j)
@@ -43,7 +39,7 @@ public class ContainerClayalizer extends Container
     public void addListener(IContainerListener listener)
     {
         super.addListener(listener);
-        listener.sendAllWindowProperties(this, this.clayliser);
+//        listener.sendAllWindowProperties(this, this.clayliser);
     }
 
     /**
@@ -53,47 +49,47 @@ public class ContainerClayalizer extends Container
     {
         super.detectAndSendChanges();
 
-        for (int i = 0; i < this.listeners.size(); ++i)
-        {
-            IContainerListener icontainerlistener = this.listeners.get(i);
-
-            if (this.cookTime != this.clayliser.getField(2))
-            {
-                icontainerlistener.sendWindowProperty(this, 2, this.clayliser.getField(2));
-            }
-
-            if (this.furnaceBurnTime != this.clayliser.getField(0))
-            {
-                icontainerlistener.sendWindowProperty(this, 0, this.clayliser.getField(0));
-            }
-
-            if (this.currentItemBurnTime != this.clayliser.getField(1))
-            {
-                icontainerlistener.sendWindowProperty(this, 1, this.clayliser.getField(1));
-            }
-
-            if (this.totalCookTime != this.clayliser.getField(3))
-            {
-                icontainerlistener.sendWindowProperty(this, 3, this.clayliser.getField(3));
-//                icontainerlistener.sendProgressBarUpdate(this, 3, this.tileFurnace.getField(3));
-            }
-        }
-
-        this.cookTime = this.clayliser.getField(2);
-        this.furnaceBurnTime = this.clayliser.getField(0);
-        this.currentItemBurnTime = this.clayliser.getField(1);
-        this.totalCookTime = this.clayliser.getField(3);
+//        for (int i = 0; i < this.listeners.size(); ++i)
+//        {
+//            IContainerListener icontainerlistener = this.listeners.get(i);
+//
+//            if (this.cookTime != this.clayliser.getField(2))
+//            {
+//                icontainerlistener.sendWindowProperty(this, 2, this.clayliser.getField(2));
+//            }
+//
+//            if (this.furnaceBurnTime != this.clayliser.getField(0))
+//            {
+//                icontainerlistener.sendWindowProperty(this, 0, this.clayliser.getField(0));
+//            }
+//
+//            if (this.currentItemBurnTime != this.clayliser.getField(1))
+//            {
+//                icontainerlistener.sendWindowProperty(this, 1, this.clayliser.getField(1));
+//            }
+//
+//            if (this.totalCookTime != this.clayliser.getField(3))
+//            {
+//                icontainerlistener.sendWindowProperty(this, 3, this.clayliser.getField(3));
+////                icontainerlistener.sendProgressBarUpdate(this, 3, this.tileFurnace.getField(3));
+//            }
+//        }
+//
+//        this.cookTime = this.clayliser.getField(2);
+//        this.furnaceBurnTime = this.clayliser.getField(0);
+//        this.currentItemBurnTime = this.clayliser.getField(1);
+//        this.totalCookTime = this.clayliser.getField(3);
     }
 
-    @SideOnly(Side.CLIENT)
-    public void updateProgressBar(int id, int data)
-    {
-        this.clayliser.setField(id, data);
-    }
+//    @SideOnly(Side.CLIENT)
+//    public void updateProgressBar(int id, int data)
+//    {
+//        this.clayliser.setField(id, data);
+//    }
 
     public boolean canInteractWith(EntityPlayer playerIn)
     {
-        return this.clayliser.isUsableByPlayer(playerIn);
+        return true;
     }
 
     /**

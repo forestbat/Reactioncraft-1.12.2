@@ -213,7 +213,10 @@ public class BlockClayalizer extends BlockContainer
 
             if (tileentity instanceof TileEntityClayalizer)
             {
-                InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityClayalizer)tileentity);
+                TileEntityClayalizer clayalizer= (TileEntityClayalizer) tileentity;
+                InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),clayalizer.outputHandler.getStackInSlot(0));
+                InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),clayalizer.itemHandler.getStackInSlot(0));
+                InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),clayalizer.itemHandler.getStackInSlot(1));
                 worldIn.updateComparatorOutputLevel(pos, this);
             }
         }
