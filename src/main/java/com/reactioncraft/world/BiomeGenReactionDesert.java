@@ -20,7 +20,6 @@ public class BiomeGenReactionDesert extends BiomeDesert
 {		
 	//private static final IBlockState Ore = IntegratedBlocks.DesertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.three2);
 	public static WorldGenTrees cherryTrees=new WorldGenTrees(true,5,BlockIndex.cherrywood.getDefaultState().withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.Y),BlockIndex.cherryTreeLeaves.getDefaultState(),false);
-//    WorldGenBush greenCactus=new WorldGenBush(BlockIndex.cactus1);
     private CactusGenerator cactusGenerator =new CactusGenerator();
 
 	public BiomeGenReactionDesert(BiomeProperties par1)
@@ -58,7 +57,6 @@ public class BiomeGenReactionDesert extends BiomeDesert
         }
 
             if (rand.nextInt(64)==1 && !cherryTrees.generate(worldIn, rand, offset.up())) {
-
 
 //                    System.out.println(offset);
 

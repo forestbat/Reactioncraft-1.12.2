@@ -1,6 +1,5 @@
 package com.reactioncraft.blocks;
 
-import com.reactioncraft.blocks.BlockReactionPlant;
 import com.reactioncraft.registration.instances.ItemIndex;
 import net.minecraft.item.Item;
 

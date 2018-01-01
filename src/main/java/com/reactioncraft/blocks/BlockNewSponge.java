@@ -1,7 +1,6 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.registration.instances.BlockIndex;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

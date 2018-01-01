@@ -16,7 +16,6 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -86,7 +85,7 @@ public class BlockRegistry
 //		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(itemMulti,"one1","one2");
 
 		registerBlockItem(BlockIndex.glowingGlass,registryEvent);
-		registerBlockItem(BlockIndex.hireoglyph,registryEvent);
+		registerBlockItem(BlockIndex.hieroglyph,registryEvent);
 		registerBlockItem(BlockIndex.surfaceOres,registryEvent);
 		registerBlockItem(BlockIndex.netherOres,registryEvent);
 		registerBlockItem(BlockIndex.endOres,registryEvent);
@@ -135,7 +134,7 @@ public class BlockRegistry
 
 		//Desert Blocks
 		BlockIndex.desertBlocks = (BlockDesertMulti) register(new BlockDesertMulti(Material.ROCK),"desertblocks",forgeRegistry).setHardness(0.3F);
-		BlockIndex.hireoglyph     = (BlockHieroglyphMulti) register(new BlockHieroglyphMulti(Material.ROCK),"hieroglyph",forgeRegistry).setHardness(0.3F);
+		BlockIndex.hieroglyph = (BlockHieroglyphMulti) register(new BlockHieroglyphMulti(Material.ROCK),"hieroglyph",forgeRegistry).setHardness(0.3F);
 		
 		//Bookshelf Blocks
 		BlockIndex.bookcases = (BlockBookshelf) register(new BlockBookshelf(Material.WOOD),"bookcases",forgeRegistry).setHardness(3.0F);

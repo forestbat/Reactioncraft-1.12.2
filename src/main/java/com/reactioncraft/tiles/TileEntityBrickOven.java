@@ -1,26 +1,17 @@
 package com.reactioncraft.tiles;
 
 import com.reactioncraft.ItemHandler;
-import com.reactioncraft.Tools;
 import com.reactioncraft.api.BrickOvenRecipes;
 import com.reactioncraft.itemhandlers.BrickOvenItemHandler;
 import com.reactioncraft.registration.instances.BlockIndex;
-import net.minecraft.block.BlockFurnace;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.inventory.*;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 import javax.annotation.Nullable;

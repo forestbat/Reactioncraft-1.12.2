@@ -14,20 +14,13 @@ import com.reactioncraft.entities.EntityHydrolisc;
 import com.reactioncraft.entities.EntitySkeletonCrawling;
 import com.reactioncraft.entities.EntityZombieCrawling;
 import com.reactioncraft.registration.*;
-import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.world.BiomeHandler;
 import com.reactioncraft.world.Worldgen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.entity.IMerchant;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.village.MerchantRecipe;
-import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeOcean;
 import net.minecraftforge.common.MinecraftForge;
@@ -48,7 +41,6 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.awt.*;
 import java.util.List;
-import java.util.Random;
 
 //import com.reactioncraft.core.Remapper;
 //Minecraft Imports
@@ -85,7 +77,7 @@ public class Reactioncraft
     {
 
         Logger.setLogger(evt.getModLog());
-        Logger.info("Pre-initialization Started");
+        Logger.info("Pre-initialization started");
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new ServerProxy());
         proxy.registerRenderInformation();
         MaterialIndex.initMaterials();
@@ -114,6 +106,8 @@ public class Reactioncraft
 
         EntityRegistry.registerModEntity(new ResourceLocation(MODID,"crawling_zombie"),EntityZombieCrawling.class,"crawling_zombie",eid++,instance,60,2,true,new Color(1,1,1).getRGB(),new Color(1,150,1).getRGB());
         EntitySpawnPlacementRegistry.setPlacementType(EntityZombieCrawling.class, EntityLiving.SpawnPlacementType.ON_GROUND);
+
+
 
         //TODO biomes to spawn in
         ForgeRegistries.BIOMES.forEach(biome -> {

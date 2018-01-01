@@ -7,7 +7,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.Map.Entry;
 

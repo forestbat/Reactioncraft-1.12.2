@@ -20,7 +20,7 @@ public class BlockIndex
     public static BlockBase bookcases;
     public static BlockBase desertBlocks;
     public static BlockGlowingGlassMulti glowingGlass;
-    public static BlockHieroglyphMulti hireoglyph;
+    public static BlockHieroglyphMulti hieroglyph;
     public static BlockBase surfaceOres;
     public static BlockBase netherOres;
     public static BlockBase endOres;

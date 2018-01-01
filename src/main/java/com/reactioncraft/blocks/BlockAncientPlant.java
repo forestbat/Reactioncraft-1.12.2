@@ -1,17 +1,7 @@
 package com.reactioncraft.blocks;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import com.reactioncraft.registration.instances.ItemIndex;
-import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockAncientPlant extends BlockReactionPlant
 {
