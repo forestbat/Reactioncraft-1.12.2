@@ -94,12 +94,9 @@ public class BlockRegistry
 		registerBlockItem(BlockIndex.rchive,registryEvent);
 
 
-		registerBlockItem(BlockIndex.freezerIdle,registryEvent);
-		registerBlockItem(BlockIndex.freezerActive,registryEvent);
-		registerBlockItem(BlockIndex.brickOvenIdle,registryEvent);
-		registerBlockItem(BlockIndex.brickOvenActive,registryEvent);
-		registerBlockItem(BlockIndex.clayalizerIdle,registryEvent);
-		registerBlockItem(BlockIndex.clayalizerActive,registryEvent);
+		registerBlockItem(BlockIndex.freezer,registryEvent);
+		registerBlockItem(BlockIndex.brickOven,registryEvent);
+		registerBlockItem(BlockIndex.claylizer,registryEvent);
 		registerBlockItem(BlockIndex.chainladder,registryEvent);
 		ItemMulti columnItem=new ItemMulti(BlockIndex.column);
 		columnItem.setRegistryName(BlockIndex.column.getRegistryName());
@@ -167,18 +164,16 @@ public class BlockRegistry
 		/* Special Regular Blocks **/
 		//Machine Blocks
 
-		BlockIndex.freezerIdle = (BlockFreezer) (new BlockFreezer(false))  .setHardness(3.5F);
-		register(BlockIndex.freezerIdle,"freezeridle",forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft);
-		BlockIndex.freezerActive = ((BlockFreezer)       (new BlockFreezer(true))  .setHardness(3.5F).setLightLevel(0.875F));
-		register(BlockIndex.freezerActive,"freezeractive",forgeRegistry);
-		BlockIndex.brickOvenIdle = ((BlockBrickOven)     (new BlockBrickOven(false))  .setHardness(3.5F).setCreativeTab(Reactioncraft.Reactioncraft));
-        register(BlockIndex.brickOvenIdle,"brickovenidle",forgeRegistry);
-		BlockIndex.brickOvenActive = ((BlockBrickOven)   (new BlockBrickOven(true))  .setHardness(3.5F).setLightLevel(0.875F));
-        register(BlockIndex.brickOvenActive,"brickovenactive",forgeRegistry);
-		BlockIndex.clayalizerIdle = ((BlockClayalizer)   (new BlockClayalizer(false)).setHardness(3.5F).setCreativeTab(Reactioncraft.Reactioncraft));
-		register(BlockIndex.clayalizerIdle,"clayalizeridle",forgeRegistry);
-		BlockIndex.clayalizerActive = ((BlockClayalizer) (new BlockClayalizer(true)) .setHardness(3.5F).setLightLevel(0.875F));
-		register(BlockIndex.clayalizerActive,"clayalizeractive",forgeRegistry);
+		BlockIndex.freezer = (BlockFreezer) (new BlockFreezer(false))  .setHardness(3.5F);
+		register(BlockIndex.freezer,"freezer",forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft);
+
+		BlockIndex.brickOven = ((BlockBrickOven)     (new BlockBrickOven(false))  .setHardness(3.5F).setCreativeTab(Reactioncraft.Reactioncraft));
+        register(BlockIndex.brickOven,"brickoven",forgeRegistry);
+
+		BlockIndex.claylizer = ((BlockClayalizer)   (new BlockClayalizer(false)).setHardness(3.5F).setCreativeTab(Reactioncraft.Reactioncraft));
+		register(BlockIndex.claylizer,"claylizer",forgeRegistry);
+//		BlockIndex.clayalizerActive = ((BlockClayalizer) (new BlockClayalizer(true)) .setHardness(3.5F).setLightLevel(0.875F));
+//		register(BlockIndex.clayalizerActive,"clayalizeractive",forgeRegistry);
 
 		BlockIndex.rchive= (BlockHive) register( new BlockHive(),"hive",forgeRegistry);
 

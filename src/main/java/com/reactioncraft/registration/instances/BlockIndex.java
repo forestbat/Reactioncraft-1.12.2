@@ -42,12 +42,11 @@ public class BlockIndex
     public static BlockBush greenCactus;
     public static BlockCherryTreeLeaves cherryTreeLeaves;
     public static BlockCherryTreeSapling cherryTreeSapling;
-    public static BlockFreezer freezerActive;
-    public static BlockFreezer freezerIdle;
-    public static BlockBrickOven brickOvenActive;
-    public static BlockBrickOven brickOvenIdle;
-    public static BlockClayalizer clayalizerIdle;
-    public static BlockClayalizer clayalizerActive;
+    public static BlockFreezer freezer;
+//    public static BlockBrickOven brickOvenActive;
+    public static BlockBrickOven brickOven;
+    public static BlockClayalizer claylizer;
+//    public static BlockClayalizer clayalizerActive;
     public static BlockHive rchive;
     public static BlockAncientPlant ancientPlant;
     public static BlockBase sugarcaneBlockBase;

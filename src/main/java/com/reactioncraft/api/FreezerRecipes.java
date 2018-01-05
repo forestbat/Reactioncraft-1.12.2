@@ -2,6 +2,7 @@ package com.reactioncraft.api;
 
 import com.google.common.collect.Maps;
 import com.reactioncraft.Tools;
+import com.reactioncraft.core.Logger;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -52,7 +53,7 @@ public class FreezerRecipes
      */
     public void addSmeltingRecipe(ItemStack input, ItemStack stack, float experience)
     {
-        if (getSmeltingResult(input) != null) { net.minecraftforge.fml.common.FMLLog.info("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
+        if (!getSmeltingResult(input) .isEmpty()) { Logger.info("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
         this.smeltingList.put(input, stack);
         this.experienceList.put(stack, experience);
     }

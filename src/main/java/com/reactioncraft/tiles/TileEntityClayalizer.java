@@ -2,8 +2,11 @@ package com.reactioncraft.tiles;
 
 import com.reactioncraft.ItemHandler;
 import com.reactioncraft.api.ClayalizerRecipes;
+import com.reactioncraft.blocks.machines.BlockBrickOven;
+import com.reactioncraft.blocks.machines.BlockClayalizer;
 import com.reactioncraft.itemhandlers.ClaylizerItemHandler;
 import com.reactioncraft.registration.instances.BlockIndex;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -37,17 +40,6 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
     public ItemHandler outputHandler=new ItemHandler(1,this);
 
 
-
-
-
-    /**
-     * Get the name of this object. For players this returns their username
-     */
-    public String getName()
-    {
-        return this.hasCustomName() ? this.customName : "container.furnace";
-    }
-
     /**
      * Returns true if this thing is named
      */
@@ -64,7 +56,7 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
     @Nullable
     @Override
     public ITextComponent getDisplayName() {
-        return new TextComponentString("Claylizer");
+        return hasCustomName() ? new TextComponentString(customName) : new TextComponentString("Claylizer");
     }
 
     public void readFromNBT(NBTTagCompound compound)
@@ -103,12 +95,6 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
     }
 
 
-    @SideOnly(Side.CLIENT)
-    public static boolean isBurning(IInventory inventory)
-    {
-        return inventory.getField(0) > 0;
-    }
-
     /**
      * Like the old updateEntity(), except more generic.
      */
@@ -117,11 +103,12 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
 
         if(!world.isRemote)
         {
+            IBlockState machineState=world.getBlockState(pos);
             ItemStack fuel=itemHandler.getStackInSlot(1);
             if(!fuel.isEmpty())
             {
                 fuelburnTime =getItemBurnTime(fuel);
-                world.addBlockEvent(pos, BlockIndex.clayalizerIdle,0, fuelburnTime);
+                world.addBlockEvent(pos, BlockIndex.claylizer,0, fuelburnTime);
             }
 
             ItemStack input=itemHandler.getStackInSlot(0);
@@ -142,15 +129,25 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
                                 totalCookTime=0;
                             }
                         }
-                        world.addBlockEvent(pos,BlockIndex.clayalizerIdle,1,totalCookTime);
+                        world.addBlockEvent(pos,BlockIndex.claylizer,1,totalCookTime);
                         currentItemBurnTime--;
+                        if(currentItemBurnTime>0 && !machineState.getValue(BlockClayalizer.STATE)) world.setBlockState(pos,machineState.withProperty(BlockClayalizer.STATE,true));
                     }
                     else{
-                        currentItemBurnTime=getItemBurnTime(fuel);
-                        fuel.shrink(1);
+                        if(!fuel.isEmpty()) {
+                            currentItemBurnTime = getItemBurnTime(fuel);
+                            fuel.shrink(1);
+                        }
+                        if(currentItemBurnTime>0) world.setBlockState(pos,machineState.withProperty(BlockBrickOven.STATE,true));
+                        else {
+                            if(machineState.getValue(BlockClayalizer.STATE)) world.setBlockState(pos,machineState.withProperty(BlockClayalizer.STATE,false));
+                        }
                     }
-                    world.addBlockEvent(pos,BlockIndex.clayalizerIdle,2,currentItemBurnTime);
+                    world.addBlockEvent(pos,BlockIndex.claylizer,2,currentItemBurnTime);
                 }
+            }
+            else{
+                if(machineState.getValue(BlockClayalizer.STATE)) world.setBlockState(pos,machineState.withProperty(BlockClayalizer.STATE,false));
             }
 
         }
@@ -177,38 +174,6 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
         return super.receiveClientEvent(id, type);
     }
 
-
-//    /**
-//     * Turn one item from the furnace source stack into the appropriate smelted item in the furnace result stack
-//     */
-//    public void smeltItem()
-//    {
-//        if (this.canSmelt())
-//        {
-//            ItemStack itemstack = FreezerRecipes.instance().getSmeltingResult(this.itemStacks.get(0));
-//            ItemStack two= itemStacks.get(2);
-//            if (two.isEmpty())
-//            {
-//                itemStacks.set(2,itemstack.copy());
-//            }
-//            else if (two.getItem() == itemstack.getItem())
-//            {
-//                two.setCount(two.getCount()+itemstack.getCount());// Forge BugFix: Results may have multiple items
-//            }
-//            ItemStack zero= itemStacks.get(0);
-//            if (zero.getItem() == Item.getItemFromBlock(Blocks.SPONGE) && zero.getMetadata() == 1 && !this.itemStacks.get(1).isEmpty() && this.itemStacks.get(1).getItem() == Items.BUCKET)
-//            {
-//                itemStacks.set(1,new ItemStack(Items.WATER_BUCKET));
-//            }
-//
-//            zero.shrink(1);
-//
-//            if (zero.getCount() <= 0)
-//            {
-//                itemStacks.set(0,ItemStack.EMPTY);
-//            }
-//        }
-//    }
 
     /**
      * Returns the number of ticks that the supplied fuel item will keep the furnace burning, or 0 if the item isn't
