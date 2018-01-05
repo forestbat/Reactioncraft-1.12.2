@@ -76,19 +76,26 @@ public class BlockRegistry
 		Item sand=registerBlockItem(BlockIndex.dark_sand,registryEvent);
 		Reactioncraft.proxy.registerItemRenderer(sand,0,sand.getRegistryName().getResourcePath());
 
-		registerBlockItem(BlockIndex.bookcases,registryEvent);
-		registerBlockItem(BlockIndex.desertBlocks,registryEvent);
-//		Reactioncraft.proxy.registerItemBlockRenderer(itemBlock,0);
-//		ItemMulti itemMulti=new ItemMulti(BlockIndex.desertBlocks);
-//		itemMulti.setRegistryName(BlockIndex.desertBlocks.getRegistryName());
-//		registryEvent.getRegistry().register(itemMulti);
-//		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(itemMulti,"one1","one2");
+		ItemBlock bcitem= registerBlockItem(BlockIndex.bookcases,registryEvent);
+		Reactioncraft.proxy.registerBlockItemRenderer(bcitem,12);
+		ItemBlock dbitem=registerBlockItem(BlockIndex.desertBlocks,registryEvent);
+		Reactioncraft.proxy.registerBlockItemRenderer(dbitem,9);
 
-		registerBlockItem(BlockIndex.glowingGlass,registryEvent);
-		registerBlockItem(BlockIndex.hieroglyph,registryEvent);
-		registerBlockItem(BlockIndex.surfaceOres,registryEvent);
-		registerBlockItem(BlockIndex.netherOres,registryEvent);
-		registerBlockItem(BlockIndex.endOres,registryEvent);
+		ItemBlock gitem=registerBlockItem(BlockIndex.glowingGlass,registryEvent);
+		Reactioncraft.proxy.registerBlockItemRenderer(gitem,16);
+
+		ItemBlock hitem= registerBlockItem(BlockIndex.hieroglyph,registryEvent);
+		Reactioncraft.proxy.registerBlockItemRenderer(hitem,13);
+
+		ItemBlock soitem= registerBlockItem(BlockIndex.surfaceOres,registryEvent);
+		Reactioncraft.proxy.registerBlockItemRenderer(soitem,6);
+
+		ItemBlock noitem= registerBlockItem(BlockIndex.netherOres,registryEvent);
+		Reactioncraft.proxy.registerBlockItemRenderer(noitem,5);
+
+		ItemBlock eoitem= registerBlockItem(BlockIndex.endOres,registryEvent);
+		Reactioncraft.proxy.registerBlockItemRenderer(eoitem,2);
+
 		registerBlockItem(BlockIndex.cherrywood,registryEvent);
 		registerBlockItem(BlockIndex.cherryTreeLeaves,registryEvent);
 		registerBlockItem(BlockIndex.rchive,registryEvent);
@@ -119,7 +126,7 @@ public class BlockRegistry
 
 	public void init(IForgeRegistry<Block> forgeRegistry)
 	{		
-		/** Metadata Blocks **/
+		/* Metadata Blocks **/
 		BlockIndex.column = (BlockColumn) register((new BlockColumn(Material.ROCK)).setHardness(3.0F),"columnReg",forgeRegistry);
 		BlockIndex.miniColumn = (BlockMiniColumn) register ((new BlockMiniColumn(Material.ROCK)).setHardness(3.0F),"ColumnMini",forgeRegistry);
 		//Turn Desert Plants Into Metadata Blocks ^^

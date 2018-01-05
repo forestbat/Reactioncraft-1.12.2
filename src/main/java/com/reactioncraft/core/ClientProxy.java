@@ -22,9 +22,9 @@ public class ClientProxy extends ServerProxy
     @Override
     public void registerItemRenderer(Item item, int meta, String id) 
     {
-    	if (item instanceof ItemMulti) 
+    	if (item instanceof ItemMulti)
     	{
-    		this.registerItemBlockRenderer(item, meta);
+//    		this.registerItemBlockRenderer(item, 16);
 		}
     	else
     	{
@@ -46,25 +46,13 @@ public class ClientProxy extends ServerProxy
 	}
 
 	//FIXME clean up blockstates
-	@Deprecated
-	public void registerItemBlockRenderer(Item item, int range)
+
+
+	public void registerBlockItemRenderer(ItemBlock item, int range)
     {
-    	ModelLoader.setCustomModelResourceLocation(item, 0,   new ModelResourceLocation(item.getRegistryName(), "type=one1"));   // meta 0
-    	ModelLoader.setCustomModelResourceLocation(item, 1,  new ModelResourceLocation(item.getRegistryName(), "type=one2"));   // meta 1
-    	ModelLoader.setCustomModelResourceLocation(item, 2,   new ModelResourceLocation(item.getRegistryName(), "type=one3"));   // meta 2
-    	ModelLoader.setCustomModelResourceLocation(item, 3,  new ModelResourceLocation(item.getRegistryName(), "type=two1"));   // meta 3
-    	ModelLoader.setCustomModelResourceLocation(item, 4,  new ModelResourceLocation(item.getRegistryName(), "type=two2"));   // meta 4
-    	ModelLoader.setCustomModelResourceLocation(item, 5,   new ModelResourceLocation(item.getRegistryName(), "type=two3"));   // meta 5
-    	ModelLoader.setCustomModelResourceLocation(item, 6,   new ModelResourceLocation(item.getRegistryName(), "type=three1")); // meta 6
-    	ModelLoader.setCustomModelResourceLocation(item, 7,  new ModelResourceLocation(item.getRegistryName(), "type=three2")); // meta 7
-    	ModelLoader.setCustomModelResourceLocation(item, 8,  new ModelResourceLocation(item.getRegistryName(), "type=three3")); // meta 8
-    	ModelLoader.setCustomModelResourceLocation(item, 9,   new ModelResourceLocation(item.getRegistryName(), "type=four1"));  // meta 9
-    	ModelLoader.setCustomModelResourceLocation(item, 10,  new ModelResourceLocation(item.getRegistryName(), "type=four2"));  // meta 10
-    	ModelLoader.setCustomModelResourceLocation(item, 11,  new ModelResourceLocation(item.getRegistryName(), "type=four3"));  // meta 11
-    	ModelLoader.setCustomModelResourceLocation(item, 12,  new ModelResourceLocation(item.getRegistryName(), "type=five1"));  // meta 12
-    	ModelLoader.setCustomModelResourceLocation(item, 13, new ModelResourceLocation(item.getRegistryName(), "type=five2"));  // meta 13
-    	ModelLoader.setCustomModelResourceLocation(item, 14,  new ModelResourceLocation(item.getRegistryName(), "type=five3"));  // meta 14
-    	ModelLoader.setCustomModelResourceLocation(item, 15,  new ModelResourceLocation(item.getRegistryName(), "type=six1" ));  // meta 15
+		for (int i = 0; i < range; i++) {
+			ModelLoader.setCustomModelResourceLocation(item,i,new ModelResourceLocation(item.getRegistryName(),"type="+i));
+		}
     }
 
 
