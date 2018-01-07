@@ -13,6 +13,7 @@ public class RecipesManager
     	RecipeRegistry.loadORES();
     	RecipeRegistry.currencyRecipesInit();
     	RecipeRegistry.loadCore();
+    	RecipeRegistry.loadDesertRecipes();
     	RecipeRegistry.miscRecipesInit();
 	}
 }
