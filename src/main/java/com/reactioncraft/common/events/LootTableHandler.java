@@ -18,9 +18,11 @@ public class LootTableHandler
     @SubscribeEvent
     public void addLoot(LootTableLoadEvent lootTableLoadEvent)
     {
-        LootEntry ingot_mould_entry=createDefaultLootEntry(ItemIndex.ingotmould);
+        LootEntry ingot_mould_entry=createMetaLootEntry(ItemIndex.ingotmould,15);
+        LootEntry coin_mould=createMetaLootEntry(ItemIndex.coinMould,15);
+
         LootEntry bronze_ingot=createDefaultLootEntry(ItemIndex.ingotBronze);
-        LootEntry coin_mould=createDefaultLootEntry(ItemIndex.coinMould);
+
 //            LootEntry mask=createDefaultLootEntry(ItemIndex.mas)
         LootEntry ruby=createDefaultLootEntry(ItemIndex.ruby);
         LootEntry ancient_fruit=createDefaultLootEntry(ItemIndex.ancientFruit);
@@ -74,6 +76,12 @@ public class LootTableHandler
         return lootPool;
     }
 
+    private LootEntryItem createMetaLootEntry(Item item,int metadata)
+    {
+        SetDamage damage=new SetDamage(new LootCondition[]{},new RandomValueRange(metadata));
+        SetCount count=new SetCount(new LootCondition[]{},new RandomValueRange(1));
+        return new LootEntryItem(item,5,1,new LootFunction[]{damage,count},new LootCondition[]{},item.getRegistryName().getResourcePath());
+    }
 
     private LootEntryItem createDefaultLootEntry(Item item)
     {
