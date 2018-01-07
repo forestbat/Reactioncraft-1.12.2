@@ -13,6 +13,7 @@ import com.reactioncraft.items.ItemMulti;
 import com.reactioncraft.registration.instances.BlockIndex;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockEndPortal;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -96,6 +97,8 @@ public class BlockRegistry
 		ItemBlock eoitem= registerBlockItem(BlockIndex.endOres,registryEvent);
 		Reactioncraft.proxy.registerBlockItemRenderer(eoitem,2);
 
+		registerBlockItem(BlockIndex.enderportalframe,registryEvent);
+
 		registerBlockItem(BlockIndex.cherrywood,registryEvent);
 		registerBlockItem(BlockIndex.cherryTreeLeaves,registryEvent);
 		registerBlockItem(BlockIndex.rchive,registryEvent);
@@ -167,9 +170,7 @@ public class BlockRegistry
 		BlockIndex.woodenBookcase = (BlockBaseDoor) register(new BlockBaseDoor(Material.WOOD),"doorWbookcase",forgeRegistry).setHardness(3.0F);
 		BlockIndex.ironBookcasedoor = (BlockBaseDoor) register(new BlockBaseDoor(Material.IRON),"doorIbookcase",forgeRegistry).setHardness(3.0F);
 		BlockIndex.cherrydoor = (BlockBaseDoor) register(new BlockBaseDoor(Material.WOOD),"cherry_door",forgeRegistry).setHardness(3.0F);
-		
-		/* Special Regular Blocks **/
-		//Machine Blocks
+
 
 		BlockIndex.freezer = (BlockFreezer) (new BlockFreezer(false))  .setHardness(3.5F);
 		register(BlockIndex.freezer,"freezer",forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft);
@@ -179,8 +180,6 @@ public class BlockRegistry
 
 		BlockIndex.claylizer = ((BlockClayalizer)   (new BlockClayalizer(false)).setHardness(3.5F).setCreativeTab(Reactioncraft.Reactioncraft));
 		register(BlockIndex.claylizer,"claylizer",forgeRegistry);
-//		BlockIndex.clayalizerActive = ((BlockClayalizer) (new BlockClayalizer(true)) .setHardness(3.5F).setLightLevel(0.875F));
-//		register(BlockIndex.clayalizerActive,"clayalizeractive",forgeRegistry);
 
 		BlockIndex.rchive= (BlockHive) register( new BlockHive(),"hive",forgeRegistry);
 
@@ -189,13 +188,15 @@ public class BlockRegistry
 		BlockIndex.ancientPlant= (BlockAncientPlant) register(new BlockAncientPlant(),"ancientplant",forgeRegistry);
 		BlockIndex.cornBlock= (BlockCornPlant) register(new BlockCornPlant(),"corn",forgeRegistry);
 
-//		BlockIndex.clearBlockBase= (BlockClear) register(new BlockClear(),"clear",forgeRegistry);
 		BlockIndex.newSponge= (BlockNewSponge) register(new BlockNewSponge(16),"sponge",forgeRegistry);
 
 		BlockIndex.chainladder= (BlockChainLadder) register(new BlockChainLadder(),"chain_ladder",forgeRegistry);
 
 		BlockIndex.redCactus = (BlockBush) register(new BlockCactus().setCreativeTab(Reactioncraft.Reactioncraft),"cactus1",forgeRegistry);
 		BlockIndex.greenCactus = (BlockBush) register(new BlockCactus().setCreativeTab(Reactioncraft.Reactioncraft),"cactus2",forgeRegistry);
+
+		BlockIndex.enderportalframe= (BlockEndPortalFrame2) register(new BlockEndPortalFrame2().setCreativeTab(Reactioncraft.Reactioncraft),"end_portal_frame",forgeRegistry);
+		BlockIndex.endportal= (BlockEndPortal2) register(new BlockEndPortal2(),"end_portal",forgeRegistry);
 	}
 	
 

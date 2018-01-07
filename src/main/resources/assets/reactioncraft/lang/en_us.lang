@@ -107,6 +107,7 @@ tile.reactioncraft.ColumnMini.9.name=Gold Mini Column 1
 tile.reactioncraft.ColumnMini.10.name=Gold Mini Column 2
 tile.reactioncraft.ColumnMini.11.name=Gold Mini Column 3
 tile.reactioncraft.ColumnMini.12.name=Weathered Mini Column
+tile.reactioncraft.end_portal_frame.name=RC End Portal Frame
 
 #Items
 item.reactioncraft.caught.name=Caught
@@ -242,7 +243,7 @@ item.reactioncraft.raw_horse.name=Raw Horse
 item.reactioncraft.cooked_horse.name=Cooked Horse
 item.reactioncraft.chicken_head.name=Chicken Head
 
-item.reactioncraft.rcendereye.name=RC Ender Eye
+item.reactioncraft.end_eye.name=RC Ender Eye
 item.reactioncraft.iron_shavings.name=Iron Shavings
 item.reactioncraft.stalks_item_base.name=Stalks
 item.reactioncraft.darkbluecrown.name=Dark-blue Crown

@@ -43,9 +43,9 @@ public class ServerProxy implements IGuiHandler
 	/**
 	 *
 	 * @param item block item
-	 * @param range 1-16
+	 * @param metadataRange 1-16
 	 */
-	public void registerBlockItemRenderer(ItemBlock item, int range){}
+	public void registerBlockItemRenderer(ItemBlock item, int metadataRange){}
 
     public enum GuiIDs
     {

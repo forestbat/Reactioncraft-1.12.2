@@ -18,15 +18,10 @@ public class ClientProxy extends ServerProxy
 {
     public static String BORE_TEXTURE = "/mods/reactioncraft/textures/railcraft/";
 
-    @Deprecated
     @Override
     public void registerItemRenderer(Item item, int meta, String id) 
     {
-    	if (item instanceof ItemMulti)
-    	{
-//    		this.registerItemBlockRenderer(item, 16);
-		}
-    	else
+    	if (!(item instanceof ItemMulti))
     	{
     		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(Reactioncraft.MODID + ":" + id, "inventory"));
     	}
@@ -45,12 +40,9 @@ public class ClientProxy extends ServerProxy
 		}
 	}
 
-	//FIXME clean up blockstates
-
-
-	public void registerBlockItemRenderer(ItemBlock item, int range)
+	public void registerBlockItemRenderer(ItemBlock item, int metadataRange)
     {
-		for (int i = 0; i < range; i++) {
+		for (int i = 0; i < metadataRange; i++) {
 			ModelLoader.setCustomModelResourceLocation(item,i,new ModelResourceLocation(item.getRegistryName(),"type="+i));
 		}
     }

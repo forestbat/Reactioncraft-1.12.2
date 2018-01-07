@@ -5,6 +5,7 @@ import com.reactioncraft.blocks.machines.BlockBrickOven;
 import com.reactioncraft.blocks.machines.BlockClayalizer;
 import com.reactioncraft.blocks.machines.BlockFreezer;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockEndPortal;
 
 
 public class BlockIndex
@@ -29,8 +30,8 @@ public class BlockIndex
     public static BlockNewSponge newSponge;
     public static BlockBase snowBlockBase;
     public static BlockChainLadder chainladder;
-    public static BlockBase enderportal;
-    public static BlockBase enderportalp;
+    public static BlockEndPortal2 endportal;
+    public static BlockEndPortalFrame2 enderportalframe;
     public static BlockBase Bookcasechest;
     public static BlockBaseDoor woodenBookcase;
     public static BlockBaseDoor ironBookcasedoor;
