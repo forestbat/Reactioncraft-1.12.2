@@ -196,7 +196,6 @@ public class BlockRegistry
 		BlockIndex.greenCactus = (BlockBush) register(new BlockCactus().setCreativeTab(Reactioncraft.Reactioncraft),"cactus2",forgeRegistry);
 
 		BlockIndex.enderportalframe= (BlockEndPortalFrame2) register(new BlockEndPortalFrame2().setCreativeTab(Reactioncraft.Reactioncraft),"end_portal_frame",forgeRegistry);
-		BlockIndex.endportal= (BlockEndPortal2) register(new BlockEndPortal2(),"end_portal",forgeRegistry);
 	}
 	
 

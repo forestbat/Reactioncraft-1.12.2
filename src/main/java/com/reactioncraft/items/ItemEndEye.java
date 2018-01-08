@@ -54,7 +54,7 @@ public class ItemEndEye extends ItemEnderEye {
                     {
                         for (int k = 0; k < 3; ++k)
                         {
-                            worldIn.setBlockState(blockpos.add(j, 0, k), BlockIndex.endportal.getDefaultState());
+                            worldIn.setBlockState(blockpos.add(j, 0, k), Blocks.END_PORTAL.getDefaultState());
                         }
                     }
 

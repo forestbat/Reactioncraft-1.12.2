@@ -30,7 +30,6 @@ public class BlockIndex
     public static BlockNewSponge newSponge;
     public static BlockBase snowBlockBase;
     public static BlockChainLadder chainladder;
-    public static BlockEndPortal2 endportal;
     public static BlockEndPortalFrame2 enderportalframe;
     public static BlockBase Bookcasechest;
     public static BlockBaseDoor woodenBookcase;
