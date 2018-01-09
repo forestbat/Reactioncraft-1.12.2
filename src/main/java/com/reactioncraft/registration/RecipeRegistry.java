@@ -32,12 +32,7 @@ public class RecipeRegistry
 			GameRegistry.addShapedRecipe(new ResourceLocation(Reactioncraft.MODID,"hilt"+i),null,netIs,netRec);
 		}
 	}
-	
-	public static void mobsRecipesInit()
-	{
-//	d	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Items.DYE, 2, 15), new Object[] {Boolean.valueOf(true), new Object[]{"Y", 'Y', "bones"}}));
-	}
-	
+
 	public static void loadRecipesforVanilla()
 	{
 		GameRegistry.addSmelting(ItemIndex.iceBucket, new ItemStack(Items.WATER_BUCKET, 1), 0.5F);
@@ -122,12 +117,6 @@ public class RecipeRegistry
 		GameRegistry.addSmelting(ItemIndex.goldDust, new ItemStack(Items.GOLD_INGOT), 0.1F);
 
 	}
-	
-	
-	//Not Fixed Below
-
-
-
 
 	public static void loadDesertRecipes()
 	{
@@ -139,8 +128,7 @@ public class RecipeRegistry
 
 	public static void loadCurrency()
 	{
-//	done	GameRegistry.addRecipe(new ItemStack(IntegratedItems.Bag, 1), new Object[] {"TTT", "T T", "TTT", 'T', IntegratedItems.Straw});
-//	done	GameRegistry.addRecipe(new ItemStack(IntegratedItems.Sack, 1), new Object[] {"TTT", "TTT", 'T', IntegratedItems.Straw});
+
 //
 //		GameRegistry.addShapelessRecipe(new ItemStack(IntegratedItems.Metadatacoin, 2, 0), new Object[] {new ItemStack(IntegratedItems.moltencopper), new ItemStack(IntegratedItems.CoinMould, 1, Reactioncraft.WILDCARD_VALUE)});
 //		GameRegistry.addShapelessRecipe(new ItemStack(IntegratedItems.Metadatacoin, 2, 1), new Object[] {new ItemStack(IntegratedItems.moltenbronze), new ItemStack(IntegratedItems.CoinMould, 1, Reactioncraft.WILDCARD_VALUE)});

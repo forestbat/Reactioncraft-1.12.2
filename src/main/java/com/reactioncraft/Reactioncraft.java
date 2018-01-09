@@ -131,7 +131,16 @@ public class Reactioncraft
         //NOTICE
         GameRegistry.registerWorldGenerator(new Worldgen(), 3);
 
-        RecipesManager.registerRecipes();
+        RecipeRegistry.netrecipyInit();
+        RecipeRegistry.oreSmelting();
+        RecipeRegistry.glassRecipesInit();
+        RecipeRegistry.loadRecipesforVanilla();
+        RecipeRegistry.foodRecipesInit();
+        RecipeRegistry.loadORES();
+        RecipeRegistry.currencyRecipesInit();
+        RecipeRegistry.loadCore();
+        RecipeRegistry.loadDesertRecipes();
+        RecipeRegistry.miscRecipesInit();
     }
 
     @Mod.EventHandler
