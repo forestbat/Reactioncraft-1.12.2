@@ -57,13 +57,6 @@ public class BlockDesertMulti extends BlockBase implements MetadataArray
         }
     }
 
-//    @Override
-//    public void registerItemModel(ItemBlock itemBlock) {
-//        for(EnumDesertBlocks desertBlocks:EnumDesertBlocks.values())
-//        {
-//            Reactioncraft.proxy.registerItemBlockRenderer(itemBlock,desertBlocks.getMetadata());
-//        }
-//    }
 
     /**
      * Convert the given metadata into a BlockState for this Block

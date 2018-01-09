@@ -22,10 +22,6 @@ import javax.annotation.Nullable;
 
 public class ServerProxy implements IGuiHandler
 {
-	public void registerItemBlockRenderer(ItemBlock itemBlock,int meta)
-	{
-
-	}
 
 	public void registerItemRenderer(Item item, int meta, String id) 
 	{

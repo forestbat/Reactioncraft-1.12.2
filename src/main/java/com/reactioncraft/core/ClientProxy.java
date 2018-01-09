@@ -16,7 +16,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends ServerProxy
 {
-    public static String BORE_TEXTURE = "/mods/reactioncraft/textures/railcraft/";
+    public static final String BORE_TEXTURE = "/mods/reactioncraft/textures/railcraft/";
 
     @Override
     public void registerItemRenderer(Item item, int meta, String id) 
@@ -28,17 +28,13 @@ public class ClientProxy extends ServerProxy
     }
 
 	@Override
-	public void registerItemBlockRenderer(ItemBlock itemBlock,int meta) {
-		ModelLoader.setCustomModelResourceLocation(itemBlock,meta,new ModelResourceLocation(Reactioncraft.MODID+":"+itemBlock.getRegistryName().getResourcePath(),"inventory"));
-	}
-
-	@Override
 	public void setItemBlockWithMetadataInventoryModel(ItemBlock itemBlock, String... variants) {
 		int m=0;
 		for (String variant : variants) {
 			ModelLoader.setCustomModelResourceLocation(itemBlock,m++,new ModelResourceLocation(Reactioncraft.MODID+":"+itemBlock.getRegistryName().getResourcePath()+variant,"inventory"));
 		}
 	}
+
 
 	public void registerBlockItemRenderer(ItemBlock item, int metadataRange)
     {
